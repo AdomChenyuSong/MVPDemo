@@ -1,3 +1,237 @@
-<resources>
-    <string name="app_name">MVPdemo</string>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" tools:ignore="MissingTranslation">
+    <string name="app_name">锐博教育</string>
+    <string name="string_user">请输入账号</string>
+    <string name="string_password">请输入密码</string>
+    <string name="string_login">登录</string>
+    <string name="string_select_object">请选择学科:</string>
+    <string name="string_math">数学</string>
+    <string name="string_chinese">语文</string>
+    <string name="string_english">英语</string>
+    <string name="string_confirm">确定</string>
+    <string name="string_cancel">取消</string>
+    <string name="string_submit_homework">交作业</string>
+    <string name="string_submit_evaluating">交卷</string>
+    <string name="tab_my_status">章节状态</string>
+    <string name="tab_knowledge">考点测评</string>
+    <string name="tab_task">作业</string>
+    <string name="tab_explain">请求讲解</string>
+    <string name="tab_micro_clase">微课</string>
+    <string name="tab_wrong_notes">错题本</string>
+    <string name="tab_evaluating">测评</string>
+    <string name="string_excellent">优（85-100）</string>
+    <string name="string_good">良（75-84）</string>
+    <string name="string_pass">中（60-74）</string>
+    <string name="string_bad">差（0-59）</string>
+    <string name="string_not_learnt">未学</string>
+    <string name="string_chapter">章</string>
+    <string name="string_knowledge">知识点</string>
+    <string name="string_part">节</string>
+    <string name="string_default">默认</string>
+    <string name="string_class_ranking">班级排名 ： <xliff:g id="number">%1$d</xliff:g> </string>
+    <string name="string_runtime">实时动态</string>
+    <string name="string_today_top">今日榜单</string>
+    <string name="string_find_classmate">查找同学</string>
+    <string name="string_look_classmate_homepage">查看同学主页</string>
+    <string name="string_the_same_work">做同样题</string>
+    <string name="string_do_finish">已做</string>
+    <string name="string_advance_exercises">提\n升\n练\n习</string>
+    <string name="string_into_test">进\n入\n自\n测</string>
+    <string name="string_search">搜索</string>
+    <string name="string_recommend">推荐</string>
+    <string name="string_accuracy">正确率：</string>
+    <string name="string_get_score">得分：</string>
+    <string name="string_finished">已结束</string>
+    <string name="string_unfinished">未结束</string>
+    <string name="string_newly_wrong">最近错题</string>
+    <string name="string_chapter_wrong">章节错题</string>
+    <string name="string_classmate_request">同学的请求</string>
+    <string name="string_request_designate">指定我的请求</string>
+    <string name="string_my_request">我的请求</string>
+    <string name="string_finished_tips">5月10日数学作业（截止日期2017年5月10日10：00）共5道题</string>
+    <string name="string_unfinished_tips">5月10日数学作业（截止日期2017年5月10日10：00）共5道题</string>
+    <string name="string_task_unfinished_tips">5月10日数学作业\n（截止日期2017年5月10日10：00）共5道题</string>
+    <string name="string_submitted">(已提交)</string>
+    <string name="string_uncommitted">(未提交)</string>
+    <string name="string_login_name_error">账号不存在，请重新输入。</string>
+    <string name="string_login_password_error">用户名和密码不匹配，请重新输入。</string>
+    <string name="string_login_error">登陆异常</string>
+    <string name="string_login_wifi_error">当前没有WiFi连接</string>
+    <string name="string_login_name_null">账号不能为空</string>
+    <string name="string_login_password_null">密码不能为空</string>
+    <string name="string_score">总积分:</string>
+    <string name="string_money">当前学习币:</string>
+    <string name="string_rule">规则</string>
+    <string name="string_exchange">兑换</string>
+    <string name="string_exchange_now"> 立即兑换</string>
+    <string name="string_recharge">充值</string>
+    <string name="string_commit">提交</string>
+    <string name="string_recharge_money">充值学习币</string>
+    <string name="string_recharge_money_payment">支付方式</string>
+    <string name="string_hint_recharge">给家长捎句话（200字以内）</string>
+    <string name="string_take_photo_update">拍照上传答案</string>
+    <string name="string_fill_tips">提示：把答案写在纸上，拍照上传答案，确定后根据解析自行批阅</string>
+    <string name="string_answer_tips">提示：把答案写在纸上，拍照上传答案，老师将为你批阅</string>
+    <string name="string_right">对</string>
+    <string name="string_error">错</string>
+    <string name="string_part_right">半对</string>
+    <string name="string_answer_time">答题耗时：<xliff:g id="number">%1$s</xliff:g></string>
+    <string name="string_answer_time_2">答题耗时：</string>
+    <string name="string_knowledges">对应知识点：<xliff:g id="number">%1$s</xliff:g></string>
+    <string name="string_right_answer">正确答案：<xliff:g id="number">%1$s</xliff:g></string>
+    <string name="string_right_answer_2">正确答案：</string>
+    <string name="string_answer_analysis">答案与解析：<xliff:g id="number">%1$s</xliff:g></string>
+    <string name="string_answer_analysis_2">答案与解析：</string>
+    <string name="string_time"><xliff:g id="number">%1$d</xliff:g>分钟</string>
+    <string name="string_time_s"><xliff:g id="number">%1$d</xliff:g>秒</string>
+    <string name="string_view_count_title">浏览量：</string>
+    <string name="string_view_count">浏览量：<xliff:g id="number">%1$d</xliff:g>次</string>
+    <string name="string_same_question_exercises">继续提升本知识点</string>
+    <string name="string_classmate_explain">请同学讲解</string>
+    <string name="string_recommended_micro_class">推荐微课</string>
+    <string name="string_view_micro_class">查看微课</string>
+    <string name="string_more">更多</string>
+    <string name="string_count_down">倒计时</string>
+    <string name="string_do_homework">写作业</string>
+    <string name="string_do_evaluating">开始测评</string>
+    <string name="string_update_success">已提交成功</string>
+    <string name="string_spake">说完了</string>
+    <string name="string_spake_content">请说出内容</string>
+    <string name="string_collection_success">已收藏成功</string>
+    <string name="string_collection_msg">个人中心-我的记录-已收藏中查看</string>
+    <string name="string_task_submission">你确定要交作业吗？你还有<xliff:g id="number">%1$d</xliff:g>道题没做完</string>
+    <string name="string_task_cancel">已做<xliff:g id="number">%1$d</xliff:g>题，若返回此次作业需重新写！</string>
+    <string name="string_pretest_cancel">已做<xliff:g id="number">%1$d</xliff:g>题，若返回此次所做的题需重新写！</string>
+    <string name="string_makesure_cancel">若返回此次所做的题需重新写哦！</string>
+    <string name="string_evaluating_submission">你确定要交卷吗？你还有<xliff:g id="number">%1$d</xliff:g>道题没做完</string>
+    <string name="string_right_sel">正确</string>
+    <string name="string_wrong_sel">错误</string>
+    <string name="string_part_right_sel">半对</string>
+    <string name="string_image">图片预览</string>
+    <string name="string_my_parent">我的家长</string>
+    <string name="string_my_parent_name">姓名：</string>
+    <string name="string_my_parent_role">角色：</string>
+    <string name="string_my_parent_user">账号：</string>
+    <string name="string_setting_msg_title">消息提醒设置</string>
+    <string name="string_setting_msg">通告</string>
+    <string name="string_setting_close_tips">关闭后不会收到相应的消息推送。</string>
+    <string name="string_setting_change_password">修改密码</string>
+    <string name="string_setting_change_phone_number">修改手机号</string>
+    <string name="string_setting_clenup">清除缓存</string>
+    <string name="string_setting_version">版本</string>
+    <string name="string_cache">有缓存</string>
+    <string name="string_no_cache">无缓存</string>
+    <string name="string_logout">退出登录</string>
+    <string name="string_title_setting">系统设置</string>
+    <string name="string_password_old">原密码</string>
+    <string name="string_password_new">新密码</string>
+    <string name="string_password_confirm">确认密码</string>
+    <string name="string_phone_number">手机号</string>
+    <string name="string_verification_code">验证码</string>
+    <string name="string_verification_code_get">获取验证码</string>
+    <string name="string_personal_profile">个人资料</string>
+    <string name="string_my_school_title">学校：</string>
+    <string name="string_my_school">学校：<xliff:g id="number">%1$s</xliff:g></string>
+    <string name="string_my_class_title">班级：</string>
+    <string name="string_my_class">班级：<xliff:g id="number">%1$s</xliff:g></string>
+    <string name="string_my_name_title">姓名：</string>
+    <string name="string_my_name">姓名：<xliff:g id="number">%1$s</xliff:g></string>
+    <string name="string_my_sex_title">性别：</string>
+    <string name="string_my_sex">性别：<xliff:g id="number">%1$s</xliff:g></string>
+    <string name="string_my_user_title">账号：</string>
+    <string name="string_my_user">账号：<xliff:g id="number">%1$s</xliff:g></string>
+    <string name="string_my_learning_currency">我的学习币</string>
+    <string name="string_my_record">我的记录</string>
+    <string name="string_my_scores">我的积分</string>
+    <string name="string_my_view_me">谁看过我</string>
+    <string name="string_sprint_record">考前冲刺</string>
+    <string name="string_task_record">家庭作业</string>
+    <string name="string_practice_record">随堂练习</string>
+    <string name="string_evaluating_record">考试测评</string>
+    <string name="string_micro_class_record">微课记录</string>
+    <string name="string_study_on_line_record">在线课堂</string>
+    <string name="string_exercise_record">练习记录</string>
+    <string name="string_promote_myself">自我提升</string>
+    <string name="string_exchange_rateScore"><xliff:g id="number">%1$s</xliff:g>积分</string>
+    <string name="string_exchange_rateCoin">可兑换<xliff:g id="number">%1$s</xliff:g>个学习币</string>
+    <string name="string_exchange_score">，您现在拥有<xliff:g id="number">%1$s</xliff:g>积分</string>
+    <string name="string_exchange_allow">您可兑换:</string>
+    <string name="string_exchange_money">个学习币</string>
+    <string name="string_buy_time">购买时间：<xliff:g id="number">%1$s</xliff:g></string>
+    <string name="string_cancel_coll">取消收藏</string>
+    <string name="string_task_status">已批：对7题，错2题，半对1题</string>
+    <string name="string_buy">已购买</string>
+    <string name="string_coll">已收藏</string>
+    <string name="string_learning_currency_balance">学习币余额：<xliff:g id="number">%1$d</xliff:g></string>
+    <string name="string_operation_coll">收藏</string>
+    <string name="string_operation_buy">购买</string>
+    <string name="string_view">已查看</string>
+    <string name="string_error_evaluation">错题分析</string>
+    <string name="string_search_hint">可输入姓名进行模糊查询</string>
+    <string name="string_init_welcome">欢迎进入锐博教育</string>
+    <string name="string_operation_pay">支付</string>
+    <string name="string_operation_pay_from_parent">请家长支付</string>
+    <string name="string_for_people_title">适用人群：</string>
+    <string name="string_for_people">适用人群：<xliff:g id="number">%1$s</xliff:g></string>
+    <string name="string_learning_target_title">学习目标：</string>
+    <string name="string_learning_target">学习目标：<xliff:g id="number">%1$s</xliff:g></string>
+    <string name="string_course_synopsis_title">课程简介：</string>
+    <string name="string_course_synopsis">课程简介：<xliff:g id="number">%1$s</xliff:g></string>
+    <string name="string_about_instructor_title">讲师介绍：</string>
+    <string name="string_about_instructor">讲师介绍：<xliff:g id="number">%1$s</xliff:g></string>
+    <string name="string_comment_time_title">评论时间：</string>
+    <string name="string_comment_time">评论时间：<xliff:g id="number">%1$s</xliff:g></string>
+    <string name="string_comment">评分</string>
+    <string name="string_input_comment">输入评论</string>
+    <string name="string_search_result">搜索结果页</string>
+    <string name="string_camera">相机</string>
+    <string name="string_pick_photo">从相册中选择</string>
+    <string name="photos_num">%1$d张</string>
+    <string name="msg_no_camera">没找到摄像头</string>
+    <string name="msg_maxi_capacity">已达到照片选择上限</string>
+    <string name="commit">确定</string>
+    <string name="commit_num">确定(%1$d/%2$d)</string>
+    <string name="string_update">正在上传</string>
+    <string name="string_learning_currency"><xliff:g id="number">%1$d</xliff:g>学习币</string>
+    <string name="string_video_author">讲师：<xliff:g id="number">%1$s</xliff:g></string>
+    <string name="string_free">免费</string>
+    <string name="update_dialog_app_title">需要更新</string>
+    <string name="update_dialog_app_message">需要更新</string>
+    <string name="string_token_error">账号在其他地方登陆</string>
+    <string name="string_net_error">网络出异常了</string>
+    <string name="string_goto_setting">去设置</string>
+    <string name="string_setting">设置</string>
+    <string name="string_no_data">很抱歉，木有数据哦～</string>
+    <string name="string_coll_error">收藏失败</string>
+    <string name="string_page_one">智能推荐学习之路\t快乐自在高效学习</string>
+    <string name="string_page_two">即学即测有的放矢\t能力提高尽在指尖</string>
+    <string name="string_page_three">海量数据深度挖掘\t提分拔高效果显著</string>
+    <string name="string_page_four">互帮互助协同进步\t教学相长乐享其中</string>
+    <string name="string_knowledge_corresponding">对应知识点：</string>
+    <string name="string_time_out">你所用时间已超过平均时长</string>
+    <string name="string_pay_failed">支付失败</string>
+    <string name="string_pay_parent_success">已通知家长支付</string>
+    <string name="string_pay_success">支付成功</string>
+    <string name="string_ranking_no_data">很抱歉，木有数据哦～</string>
+    <string name="string_top_no_data">很抱歉，木有数据哦～</string>
+    <string name="string_task_unfinished_status">"("<xliff:g id="number">%1$s</xliff:g>")"</string>
+    <string name="string_advance_test">提升练习</string>
+    <string name="string_next_advance_test">提升下一知识点</string>
+    <string name="string_home_tips">点击颜色状态条进入该章节</string>
+    <string name="fa_biao_yv">发表于 <xliff:g id="number">%1$s</xliff:g></string>
+    <string name="select_subject">请选择学科</string>
+    <!--2.0版本-->
+    <string name="chapter_state">章节状态</string>
+    <string name="self_test">考点自测</string>
+    <string name="pretest_sprint">考前冲刺</string>
+    <string name="home_work">家庭作业</string>
+    <string name="practice_with_the_hall">随堂练习</string>
+    <string name="test_evaluation">考试测评</string>
+    <string name="online_classroom">在线课堂</string>
+    <string name="wrong_title_summary">错题汇总</string>
+    <string name="ask_for_explanation">请求讲解</string>
+    <string name="all_classmates_explan">所有同学讲解</string>
+    <string name="introduce_classmates_explan">指定同学讲解</string>
+    <string name="please_select_student_hint">请选择您要指定的同学!</string>
+    <string name="please_input_content">请输入内容!</string>
+    <string name="string_delete_comment">删除评论</string>
 </resources>
