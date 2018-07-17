@@ -11,6 +11,7 @@ public abstract class BasePresenter<V extends MvpView> {
     private V mView;
     public Call mCall;
 
+
     /**
      * 绑定view
      * @param mView
