@@ -7,7 +7,7 @@ import okhttp3.Call;
  * Created by qqweq on 2018/7/16.
  */
 
-public abstract class BasePresenter<V extends MvpView> {
+public abstract class BasePresenter<V> {
     private V mView;
     public Call mCall;
 
@@ -35,8 +35,6 @@ public abstract class BasePresenter<V extends MvpView> {
     public boolean isViewAttached(){
         return mView!= null;
     }
-
-
 
     public V getView(){
         return mView;

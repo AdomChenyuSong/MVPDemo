@@ -10,10 +10,10 @@
         android:layout_height="match_parent"></FrameLayout>
 
     <include
-        layout="@layout/layout_error_page"></include>
+        layout="@layout/layout_error_page" android:visibility="gone"></include>
 
     <include
-        layout="@layout/layout_no_data"></include>
+        layout="@layout/layout_no_data" android:visibility="gone"></include>
 
 
 </LinearLayout>

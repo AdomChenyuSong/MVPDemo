@@ -3,12 +3,10 @@ package com.example.qqweq.mvpdemo.base;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -20,7 +18,7 @@ import com.example.qqweq.mvpdemo.untils.StatusBarUtil;
  * Created by qqweq on 2018/7/13.
  */
 
-public abstract class BaseActivity extends FragmentActivity implements View.OnClickListener {
+public abstract class BaseActivity extends AppCompatActivity implements View.OnClickListener {
     private ImageView iv_back;
     private TextView title;
 
@@ -49,6 +47,7 @@ public abstract class BaseActivity extends FragmentActivity implements View.OnCl
         if (bundle == null) {
             bundle = savedInstanceState;
         }
+        initView();
         initData(bundle);
     }
 
@@ -60,7 +59,7 @@ public abstract class BaseActivity extends FragmentActivity implements View.OnCl
     }
 
     protected abstract int setContentLayout();
-
+    protected abstract void initView();
     protected abstract void initData(Bundle bundle);
 
     public View addContentView(LayoutInflater inflater) {

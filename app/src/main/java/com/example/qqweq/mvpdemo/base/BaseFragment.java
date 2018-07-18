@@ -25,8 +25,9 @@ public abstract class BaseFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.base_fragment, null, false);
-        initView(view);
+        initBaseView(view);
         addContentView(inflater);
+        initView(view);
         Bundle bundle = getArguments();
         if (bundle == null) {
             bundle = savedInstanceState;
@@ -40,7 +41,7 @@ public abstract class BaseFragment extends Fragment {
         fl_container.addView(contentView);
     }
 
-    private View initView(View view) {
+    private View initBaseView(View view) {
         fl_container = view.findViewById(R.id.fl_container);
         ll_base_error_content = view.findViewById(R.id.ll_base_error_content);
         ll_layout_base_no_data = view.findViewById(R.id.ll_layout_base_no_data);
@@ -51,5 +52,7 @@ public abstract class BaseFragment extends Fragment {
     public abstract int setContentLayout();
 
     public abstract void initData(Bundle data);
+
+    public abstract void initView(View view);
 
 }
