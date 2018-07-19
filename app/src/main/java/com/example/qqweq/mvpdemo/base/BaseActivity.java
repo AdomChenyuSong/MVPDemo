@@ -7,12 +7,16 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.qqweq.mvpdemo.R;
 import com.example.qqweq.mvpdemo.untils.StatusBarUtil;
+
+import java.util.Map;
 
 /**
  * Created by qqweq on 2018/7/13.
@@ -39,6 +43,7 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
+        getSupportActionBar().hide();
         super.onCreate(savedInstanceState);
         LayoutInflater inflater = LayoutInflater.from(this);
         setContentView(addContentView(inflater));
@@ -65,7 +70,8 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
     public View addContentView(LayoutInflater inflater) {
         LinearLayout mParentView = (LinearLayout) inflater.inflate(R.layout.base_activity, null);
         View subActivityView = inflater.inflate(setContentLayout(), null);
-        mParentView.addView(subActivityView);
+        LinearLayout.LayoutParams params=new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+        mParentView.addView(subActivityView,params);
         initBaseView(mParentView);
         return mParentView;
     }

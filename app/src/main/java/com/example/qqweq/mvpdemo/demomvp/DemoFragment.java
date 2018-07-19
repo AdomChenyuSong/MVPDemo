@@ -40,4 +40,10 @@ public class DemoFragment extends MvpFragment<MvpView, DemoPresenter> implements
     public void getData(String data) {
         tv_name.setText(data);
     }
+
+
+    @Override
+    public void setEmptyImageRescoure(int rescoure) {
+        super.setEmptyImageRescoure(rescoure);
+    }
 }

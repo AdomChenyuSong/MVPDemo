@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/ll_layout_base_no_data"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ffffff"
+    android:background="@color/white"
     android:clickable="true"
     android:gravity="center_horizontal"
     android:orientation="vertical">
@@ -15,15 +14,6 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/img_no_data"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="45px"
-            android:textColor="@color/text_666666"
-            android:textSize="40px"
-            tools:text="@string/string_no_data" />
 
         <ImageView
             android:id="@+id/img_no_data"
@@ -32,5 +22,15 @@
             android:layout_centerInParent="true"
             android:scaleType="centerInside"
             android:src="@drawable/ic_no_data" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/img_no_data"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="45px"
+            android:textColor="@color/text_666666"
+            android:textSize="40px"
+            android:text="@string/string_no_data" />
     </RelativeLayout>
 </LinearLayout>

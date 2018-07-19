@@ -9,6 +9,7 @@ import com.example.qqweq.mvpdemo.mvp.MvpView;
 
 public class DemoPresenter extends BasePresenter<MvpView> {
     public void getData() {
+        getView().showLoading();
         getView().getData("hai");
 //        mCall.enqueue(new Callback() {
 //            @Override

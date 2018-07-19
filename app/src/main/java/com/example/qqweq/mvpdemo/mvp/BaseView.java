@@ -28,7 +28,10 @@ public interface BaseView {
      * 展示错误信息
      */
     void showErr();
-
+    /**
+     * 数据为空时调用
+     */
+    void emptyData();
     /**
      * 获取当前上下文对象
      * @return

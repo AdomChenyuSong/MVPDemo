@@ -1,6 +1,8 @@
 package com.example.qqweq.mvpdemo.mvp;
 
 
+import java.lang.ref.WeakReference;
+
 import okhttp3.Call;
 
 /**
@@ -8,7 +10,7 @@ import okhttp3.Call;
  */
 
 public abstract class BasePresenter<V> {
-    private V mView;
+    private WeakReference<V> mView;
     public Call mCall;
 
 
@@ -17,13 +19,16 @@ public abstract class BasePresenter<V> {
      * @param mView
      */
     public void attachView(V mView) {
-        this.mView = mView;
+        this.mView = new WeakReference<>(mView);
     }
     /**
      * 释放view
      */
     public void dettachView(){
-        this.mView = null;
+        if (mView!=null){
+            mView.clear();
+            mView = null;
+        }
         if (mCall != null) {
             mCall.cancel();
         }
@@ -37,6 +42,6 @@ public abstract class BasePresenter<V> {
     }
 
     public V getView(){
-        return mView;
+        return mView.get();
     }
 }

@@ -3,6 +3,7 @@ package com.example.qqweq.mvpdemo.mvp;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.widget.Toast;
 
 import com.example.qqweq.mvpdemo.base.BaseFragment;
 
@@ -12,13 +13,12 @@ import com.example.qqweq.mvpdemo.base.BaseFragment;
 
 public abstract class MvpFragment<V, P extends BasePresenter<V>> extends BaseFragment implements BaseView {
     public P mPresenter;
-
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mPresenter = initPresenter();
         if (mPresenter != null) {
-            mPresenter.attachView((V)this);
+            mPresenter.attachView((V) this);
         }
     }
 
@@ -34,22 +34,26 @@ public abstract class MvpFragment<V, P extends BasePresenter<V>> extends BaseFra
 
     @Override
     public void showLoading() {
-
+        setRefresh();
     }
 
     @Override
     public void hideLoading() {
-
     }
 
     @Override
     public void showToast(String msg) {
-
+        Toast.makeText(getContext(), msg, Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void showErr() {
+        showErrorPage();
+    }
 
+    @Override
+    public void emptyData() {
+        showNoData();
     }
 
     @Override
