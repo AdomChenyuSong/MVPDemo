@@ -3,16 +3,21 @@ package com.example.qqweq.mvpdemo.demomvp;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.qqweq.mvpdemo.MainActivity;
 import com.example.qqweq.mvpdemo.R;
+import com.example.qqweq.mvpdemo.bean.FinishedDataBean;
 import com.example.qqweq.mvpdemo.mvp.MvpFragment;
 import com.example.qqweq.mvpdemo.mvp.MvpView;
+
+import org.greenrobot.eventbus.EventBus;
 
 /**
  * Created by qqweq on 2018/7/17.
  */
 
-public class DemoFragment extends MvpFragment<MvpView, DemoPresenter> implements MvpView{
+public class DemoFragment extends MvpFragment<MvpView, DemoPresenter> implements MvpView {
     private TextView tv_name;
 
     @Override
@@ -27,8 +32,13 @@ public class DemoFragment extends MvpFragment<MvpView, DemoPresenter> implements
 
     @Override
     public void initView(View mView) {
-        tv_name=mView.findViewById(R.id.tv_name);
-
+        tv_name = mView.findViewById(R.id.tv_name);
+//        tv_name.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                EventBus.getDefault().post(new MainActivity.TestEvent("2222"));
+//            }
+//        });
     }
 
     @Override
