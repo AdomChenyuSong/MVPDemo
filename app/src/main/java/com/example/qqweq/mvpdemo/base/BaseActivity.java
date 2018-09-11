@@ -25,7 +25,6 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
     @Override
     protected void onPause() {
         super.onPause();
-//        EventBus.getDefault().unregister(this);
     }
 
     @Override
@@ -51,8 +50,6 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
         }
         initView();
         initData(bundle);
-
-//        EventBus.getDefault().register(this);
     }
     /**
      * 设置状态栏颜色

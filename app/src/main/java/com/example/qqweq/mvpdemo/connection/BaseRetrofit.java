@@ -1,13 +1,9 @@
 package com.example.qqweq.mvpdemo.connection;
 
 import android.util.Log;
-
 import com.example.qqweq.mvpdemo.Configuration;
-import com.example.qqweq.mvpdemo.connection.netinterface.MyService;
-
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
-
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -74,8 +70,14 @@ public class BaseRetrofit {
         }
     }
 
-    MyService upApiService() {
-        return retrofit.create(MyService.class);
+//    MyService upApiService() {
+//        return retrofit.create(MyService.class);
+//    }
+//    VersionService versionApiService() {
+//        return retrofit.create(VersionService.class);
+//    }
+    public <T> T createService(Class<T> tClass){
+      return retrofit.create(tClass);
     }
 
     private volatile static BaseRetrofit INSTANCE = null;

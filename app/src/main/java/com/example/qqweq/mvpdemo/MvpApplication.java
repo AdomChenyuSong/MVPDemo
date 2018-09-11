@@ -17,8 +17,10 @@ import org.greenrobot.eventbus.meta.SubscriberMethodInfo;
  */
 
 public class MvpApplication extends Application {
+    public static MvpApplication mvpApplication;
     @Override
     public void onCreate() {
         super.onCreate();
+        mvpApplication=this;
     }
 }
