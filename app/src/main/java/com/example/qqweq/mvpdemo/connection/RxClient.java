@@ -44,21 +44,24 @@ public class RxClient<T> {
     /**
      * ----------------------------------------------------------------------------------------------------------------
      **/
-    public static class DefaultTransformer<T> implements ObservableTransformer<T, T> {
+    public static class DefaultTransformer<T> implements ObservableTransformer<BaseEntity<T>, T> {
 
         @Override
-        public ObservableSource<T> apply(Observable<T> upstream) {
-            return upstream.subscribeOn(Schedulers.io()).unsubscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).map(new Function<T, T>() {
-                @Override
-                public T apply(T t) throws Exception {
-                    int status_code = ((BaseEntity<T>) t).getStatus_code();
-                    String status_msg = ((BaseEntity<T>) t).getError_msg();
-                    if (status_code != 200) {
-                        throw new ApiException(status_code, status_msg);
-                    }
-                    return t;
-                }
-            });
+        public ObservableSource<T> apply(Observable<BaseEntity<T>> upstream) {
+            return upstream.subscribeOn(Schedulers.io())
+                    .unsubscribeOn(Schedulers.io())
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .map(new Function<BaseEntity<T>, T>() {
+                        @Override
+                        public T apply(BaseEntity<T> tBaseEntity) throws Exception {
+                            int status_code = tBaseEntity.getStatus_code();
+                            String status_msg = tBaseEntity.getError_msg();
+                            if (status_code != 200) {
+                                throw new ApiException(status_code, status_msg);
+                            }
+                            return tBaseEntity.getData();
+                        }
+                    });
         }
     }
 

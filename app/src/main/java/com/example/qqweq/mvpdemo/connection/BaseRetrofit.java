@@ -1,9 +1,12 @@
 package com.example.qqweq.mvpdemo.connection;
 
 import android.util.Log;
+
 import com.example.qqweq.mvpdemo.Configuration;
+
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
+
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -53,7 +56,6 @@ public class BaseRetrofit {
             Request request = chain.request();
             Log.e("SCY", request.url().toString());
             Response response = chain.proceed(request);
-            Log.e("SCY", response.body().toString());
             return response;
         }
     }

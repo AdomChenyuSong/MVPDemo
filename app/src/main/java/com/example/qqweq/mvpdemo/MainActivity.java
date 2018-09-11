@@ -3,25 +3,9 @@ package com.example.qqweq.mvpdemo;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.util.Log;
-import android.widget.Toast;
 
 import com.example.qqweq.mvpdemo.base.BaseActivity;
-import com.example.qqweq.mvpdemo.bean.FinishedDataBean;
 import com.example.qqweq.mvpdemo.demomvp.DemoFragment;
-
-import org.greenrobot.eventbus.Subscribe;
-import org.greenrobot.eventbus.ThreadMode;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import io.reactivex.Observable;
-import io.reactivex.ObservableEmitter;
-import io.reactivex.ObservableOnSubscribe;
-import io.reactivex.Observer;
-import io.reactivex.Scheduler;
-import io.reactivex.disposables.Disposable;
 
 public class MainActivity extends BaseActivity {
 
