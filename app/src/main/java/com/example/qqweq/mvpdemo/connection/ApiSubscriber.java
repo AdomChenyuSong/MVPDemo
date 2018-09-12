@@ -1,20 +1,13 @@
 package com.example.qqweq.mvpdemo.connection;
 
 import android.content.Context;
-
 import com.example.qqweq.mvpdemo.dialog.LoadingDialog;
 import com.example.qqweq.mvpdemo.untils.ToastUtils;
 import com.google.gson.JsonSyntaxException;
-
-import org.reactivestreams.Subscriber;
-import org.reactivestreams.Subscription;
-
 import java.net.ConnectException;
 import java.net.SocketTimeoutException;
 import java.net.UnknownHostException;
-import java.util.Observable;
 import java.util.concurrent.TimeoutException;
-
 import io.reactivex.Observer;
 import io.reactivex.annotations.NonNull;
 import io.reactivex.disposables.Disposable;

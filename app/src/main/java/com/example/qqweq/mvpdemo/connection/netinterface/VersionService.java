@@ -15,6 +15,6 @@ import retrofit2.http.Query;
  */
 
 public interface VersionService {
-    @GET("c/v1/version/1")
+    @GET("c/v1/version/11")
     Observable<BaseEntity<AppVersionModel>> getVersion(@Query("versioncode") int versioncode);
 }

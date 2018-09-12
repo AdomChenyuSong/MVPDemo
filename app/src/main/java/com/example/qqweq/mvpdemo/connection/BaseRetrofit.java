@@ -3,14 +3,22 @@ package com.example.qqweq.mvpdemo.connection;
 import android.util.Log;
 
 import com.example.qqweq.mvpdemo.Configuration;
+import com.example.qqweq.mvpdemo.bean.BaseEntity;
+import com.google.gson.Gson;
 
 import java.io.IOException;
+import java.nio.charset.Charset;
+import java.nio.charset.UnsupportedCharsetException;
 import java.util.concurrent.TimeUnit;
 
 import okhttp3.Interceptor;
+import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
+import okhttp3.ResponseBody;
+import okio.Buffer;
+import okio.BufferedSource;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -54,7 +62,7 @@ public class BaseRetrofit {
         @Override
         public Response intercept(Chain chain) throws IOException {
             Request request = chain.request();
-            Log.e("SCY", request.url().toString());
+            Log.e("SCY", " - - - - " + request.url().toString());
             Response response = chain.proceed(request);
             return response;
         }
@@ -72,14 +80,14 @@ public class BaseRetrofit {
         }
     }
 
-//    MyService upApiService() {
+    //    MyService upApiService() {
 //        return retrofit.create(MyService.class);
 //    }
 //    VersionService versionApiService() {
 //        return retrofit.create(VersionService.class);
 //    }
-    public <T> T createService(Class<T> tClass){
-      return retrofit.create(tClass);
+    public <T> T createService(Class<T> tClass) {
+        return retrofit.create(tClass);
     }
 
     private volatile static BaseRetrofit INSTANCE = null;

@@ -1,13 +1,11 @@
 package com.example.qqweq.mvpdemo.bean;
 
 /**
- 韩梦飞沙 韩亚飞 313134555@qq.com yue31313 han_meng_fei_sha
- on 2017/9/26.
+ * 韩梦飞沙 韩亚飞 313134555@qq.com yue31313 han_meng_fei_sha
+ * on 2017/9/26.
  */
 
 public class AppVersionModel {
-
-
     /**
      * islast : 1
      * versionno : 1.0.6
@@ -21,24 +19,62 @@ public class AppVersionModel {
     private String appurl;
     private int isforce;
     private String content;
+    private String code;
+    private String msg;
 
-    public int getIslast() { return islast;}
+    public String getMsg() {
+        return msg;
+    }
 
-    public void setIslast(int islast) { this.islast = islast;}
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
 
-    public String getVersionno() { return versionno;}
+    public String getCode() {
+        return code;
+    }
 
-    public void setVersionno(String versionno) { this.versionno = versionno;}
+    public void setCode(String code) {
+        this.code = code;
+    }
 
-    public String getAppurl() { return appurl;}
+    public int getIslast() {
+        return islast;
+    }
 
-    public void setAppurl(String appurl) { this.appurl = appurl;}
+    public void setIslast(int islast) {
+        this.islast = islast;
+    }
 
-    public int getIsforce() { return isforce;}
+    public String getVersionno() {
+        return versionno;
+    }
 
-    public void setIsforce(int isforce) { this.isforce = isforce;}
+    public void setVersionno(String versionno) {
+        this.versionno = versionno;
+    }
 
-    public String getContent() { return content;}
+    public String getAppurl() {
+        return appurl;
+    }
 
-    public void setContent(String content) { this.content = content;}
+    public void setAppurl(String appurl) {
+        this.appurl = appurl;
+    }
+
+    public int getIsforce() {
+        return isforce;
+    }
+
+    public void setIsforce(int isforce) {
+        this.isforce = isforce;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
 }
