@@ -1,14 +1,11 @@
 package com.example.qqweq.mvpdemo.activity;
 
 import android.os.Bundle;
-
 import com.example.qqweq.mvpdemo.R;
 import com.example.qqweq.mvpdemo.base.BaseActivity;
 import com.example.qqweq.mvpdemo.bean.AppVersionModel;
 import com.example.qqweq.mvpdemo.connection.ApiSubscriber;
 import com.example.qqweq.mvpdemo.connection.RxClient;
-
-
 /**
  * Created by qqweq on 2018/9/10.
  */
