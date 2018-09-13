@@ -1,13 +1,17 @@
 package com.example.qqweq.mvpdemo.connection;
 
+import android.app.Dialog;
 import android.content.Context;
+
 import com.example.qqweq.mvpdemo.dialog.LoadingDialog;
 import com.example.qqweq.mvpdemo.untils.ToastUtils;
 import com.google.gson.JsonSyntaxException;
+
 import java.net.ConnectException;
 import java.net.SocketTimeoutException;
 import java.net.UnknownHostException;
 import java.util.concurrent.TimeoutException;
+
 import io.reactivex.Observer;
 import io.reactivex.annotations.NonNull;
 import io.reactivex.disposables.Disposable;
@@ -18,7 +22,7 @@ import io.reactivex.disposables.Disposable;
  */
 
 public abstract class ApiSubscriber<T> implements Observer<T> {
-    private LoadingDialog loadingDialog;
+    private Dialog loadingDialog;
     private Context mContext;
 
     public ApiSubscriber(@NonNull Context context) {
@@ -32,7 +36,7 @@ public abstract class ApiSubscriber<T> implements Observer<T> {
 
     @Override
     public void onSubscribe(Disposable d) {
-        loadingDialog = new LoadingDialog.Builder(mContext).create();
+        loadingDialog = new LoadingDialog(mContext);
         loadingDialog.show();
     }
 
