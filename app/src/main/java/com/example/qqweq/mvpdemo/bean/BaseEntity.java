@@ -6,32 +6,24 @@ import java.io.Serializable;
  * Created by qqweq on 2018/9/11.
  */
 
-public class BaseEntity<T> implements Serializable {
-    public int status_code;
-    public String error_msg;
-    public T data;
+public class BaseEntity implements Serializable {
+    public int code;
+    public String msg;
 
     public int getStatus_code() {
-        return status_code;
+        return code;
     }
 
     public void setStatus_code(int status_code) {
-        this.status_code = status_code;
+        this.code = status_code;
     }
 
     public String getError_msg() {
-        return error_msg;
+        return msg;
     }
 
     public void setError_msg(String error_msg) {
-        this.error_msg = error_msg;
+        this.msg = error_msg;
     }
 
-    public T getData() {
-        return data;
-    }
-
-    public void setData(T data) {
-        this.data = data;
-    }
 }

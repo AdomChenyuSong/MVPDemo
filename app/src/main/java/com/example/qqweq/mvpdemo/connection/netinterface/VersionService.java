@@ -1,10 +1,6 @@
 package com.example.qqweq.mvpdemo.connection.netinterface;
 
 import com.example.qqweq.mvpdemo.bean.AppVersionModel;
-import com.example.qqweq.mvpdemo.bean.BaseEntity;
-import com.example.qqweq.mvpdemo.bean.FinishedDataBean;
-
-import java.util.List;
 
 import io.reactivex.Observable;
 import retrofit2.http.GET;
@@ -16,5 +12,5 @@ import retrofit2.http.Query;
 
 public interface VersionService {
     @GET("c/v1/version/11")
-    Observable<BaseEntity<AppVersionModel>> getVersion(@Query("versioncode") int versioncode);
+    Observable<AppVersionModel> getVersion(@Query("versioncode") int versioncode);
 }

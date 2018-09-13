@@ -5,9 +5,7 @@ import com.example.qqweq.mvpdemo.bean.BaseEntity;
 import com.example.qqweq.mvpdemo.bean.FinishedDataBean;
 import com.example.qqweq.mvpdemo.connection.netinterface.MyService;
 import com.example.qqweq.mvpdemo.connection.netinterface.VersionService;
-
 import java.util.List;
-
 import io.reactivex.Observable;
 import io.reactivex.ObservableSource;
 import io.reactivex.ObservableTransformer;
@@ -37,29 +35,29 @@ public class RxClient<T> {
      * @param versionCode
      * @return
      */
-    public static Observable<BaseEntity<AppVersionModel>> getVersion(int versionCode) {
+    public static Observable<AppVersionModel> getVersion(int versionCode) {
         return BaseRetrofit.getInstance().createService(VersionService.class).getVersion(versionCode);
     }
 
     /**
      * ----------------------------------------------------------------------------------------------------------------
      **/
-    public static class DefaultTransformer<T> implements ObservableTransformer<BaseEntity<T>, T> {
+    public static class DefaultTransformer<T> implements ObservableTransformer<T, T> {
 
         @Override
-        public ObservableSource<T> apply(Observable<BaseEntity<T>> upstream) {
+        public ObservableSource<T> apply(Observable<T> upstream) {
             return upstream.subscribeOn(Schedulers.io())
                     .unsubscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
-                    .map(new Function<BaseEntity<T>, T>() {
+                    .map(new Function<T, T>() {
                         @Override
-                        public T apply(BaseEntity<T> tBaseEntity) throws Exception {
-                            int status_code = tBaseEntity.getStatus_code();
-                            String status_msg = tBaseEntity.getError_msg();
+                        public T apply(T tBaseEntity) throws Exception {
+                            int status_code = ((BaseEntity)tBaseEntity).getStatus_code();
+                            String status_msg =  ((BaseEntity)tBaseEntity).getError_msg();
                             if (status_code != 200) {
                                 throw new ApiException(status_code, status_msg);
                             }
-                            return tBaseEntity.getData();
+                            return tBaseEntity;
                         }
                     });
         }

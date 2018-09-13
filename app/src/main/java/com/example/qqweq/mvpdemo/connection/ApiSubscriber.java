@@ -41,6 +41,7 @@ public abstract class ApiSubscriber<T> implements Observer<T> {
         dismiss();
         if (e instanceof ApiException) {
             //处理服务器返回的错误
+            ToastUtils.showToast("日志报错信息＝"+((ApiException) e).getCode());
         } else if (e instanceof ConnectException || e instanceof UnknownHostException) {
             ToastUtils.showToast("网络异常，请检查网络");
         } else if (e instanceof TimeoutException || e instanceof SocketTimeoutException) {
