@@ -7,7 +7,7 @@ import java.io.Serializable;
  */
 
 public class BaseEntity implements Serializable {
-    public int code;
+    public int code = 200;
     public String msg;
 
     public int getStatus_code() {

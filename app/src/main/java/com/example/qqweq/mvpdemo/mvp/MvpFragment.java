@@ -13,12 +13,13 @@ import com.example.qqweq.mvpdemo.base.BaseFragment;
 
 public abstract class MvpFragment<V, P extends BasePresenter<V>> extends BaseFragment implements BaseView {
     public P mPresenter;
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mPresenter = initPresenter();
         if (mPresenter != null) {
-            mPresenter.attachView((V) this);
+            mPresenter.attachView((V) this, getContext());
         }
     }
 

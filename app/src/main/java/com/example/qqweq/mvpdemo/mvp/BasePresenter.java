@@ -1,6 +1,8 @@
 package com.example.qqweq.mvpdemo.mvp;
 
 
+import android.content.Context;
+
 import java.lang.ref.WeakReference;
 
 import okhttp3.Call;
@@ -12,14 +14,16 @@ import okhttp3.Call;
 public abstract class BasePresenter<V> {
     private WeakReference<V> mView;
     public Call mCall;
+    public Context mContext;
 
     /**
      * 绑定view
      *
      * @param mView
      */
-    public void attachView(V mView) {
+    public void attachView(V mView, Context mContext) {
         this.mView = new WeakReference<>(mView);
+        this.mContext = mContext;
     }
 
     /**

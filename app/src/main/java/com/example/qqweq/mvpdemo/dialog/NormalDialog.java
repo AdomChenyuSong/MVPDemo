@@ -33,10 +33,13 @@ public class NormalDialog extends BaseDialog implements View.OnClickListener {
         dialog_tv_msg = view.findViewById(R.id.dialog_tv_msg);
         dialog_tv_confirm = view.findViewById(R.id.dialog_tv_confirm);
         dialog_tv_cancel = view.findViewById(R.id.dialog_tv_cancel);
+        dialog_tv_confirm.setOnClickListener(this);
+        dialog_tv_cancel.setOnClickListener(this);
     }
 
     /**
      * 资源ID信息
+     *
      * @param resId
      */
     public void setMessage(int resId) {
@@ -63,7 +66,8 @@ public class NormalDialog extends BaseDialog implements View.OnClickListener {
                 listener.setClickListener(1);
                 break;
             case R.id.dialog_tv_cancel:
-                listener.setClickListener(1);
+                dismiss();
+                listener.setClickListener(2);
                 break;
         }
     }
