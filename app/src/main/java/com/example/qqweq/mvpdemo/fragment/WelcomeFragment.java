@@ -1,15 +1,15 @@
 package com.example.qqweq.mvpdemo.fragment;
 
 import android.os.Bundle;
-import android.view.Display;
+import android.support.v4.app.FragmentTransaction;
 import android.view.View;
-import android.view.WindowManager;
 
 import com.example.qqweq.mvpdemo.R;
 import com.example.qqweq.mvpdemo.bean.AppVersionModel;
-import com.example.qqweq.mvpdemo.dialog.LoadingDialog;
 import com.example.qqweq.mvpdemo.dialog.NormalDialog;
 import com.example.qqweq.mvpdemo.mvp.MvpFragment;
+import com.example.qqweq.mvpdemo.mvpview.WelcomeView;
+import com.example.qqweq.mvpdemo.presenter.WelcomeFresenter;
 
 /**
  * Created by qqweq on 2018/9/15.
@@ -42,22 +42,25 @@ public class WelcomeFragment extends MvpFragment<WelcomeView, WelcomeFresenter> 
     @Override
     public void getVersion(AppVersionModel versionCode) {
         if (versionCode.getIslast() != 2) {
-            NormalDialog normalDialog = new NormalDialog(getContext());
+            NormalDialog normalDialog = new NormalDialog(getActivity());
             normalDialog.setMessage(versionCode.getContent());
             normalDialog.setClickListener(new NormalDialog.setClickListener() {
                 @Override
                 public void setClickListener(int type) {
-
+                    if (type == 2) {
+                        transToLogin();
+                    }
                 }
             });
             normalDialog.show();
-            // 将对话框的大小按屏幕大小的百分比设置
-            WindowManager windowManager = getActivity().getWindowManager();
-            Display display = windowManager.getDefaultDisplay();
-            WindowManager.LayoutParams lp = normalDialog.getWindow().getAttributes();
-            lp.width = (int) (display.getWidth() * 0.40); //设置宽度
-            lp.height = (int) (display.getHeight() * 0.40);
-            normalDialog.getWindow().setAttributes(lp);
+        } else {
+            transToLogin();
         }
+    }
+
+    private void transToLogin() {
+        FragmentTransaction transaction = getfragmentTransaction();
+        transaction.replace(R.id.fl_container, new LoginFragment());
+        transaction.commitAllowingStateLoss();
     }
 }

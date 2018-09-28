@@ -1,5 +1,6 @@
 package com.example.qqweq.mvpdemo.dialog;
 
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -18,7 +19,7 @@ import com.example.qqweq.mvpdemo.R;
  */
 public class LoadingDialog extends BaseDialog {
     private TextView tipTextView;
-    private Context context;
+    private Activity context;
 
     @Override
     protected int getLayoutId() {
@@ -41,7 +42,7 @@ public class LoadingDialog extends BaseDialog {
         }
     }
 
-    public LoadingDialog(Context context) {
+    public LoadingDialog(Activity context) {
         super(context, R.style.MyDialogStyle);
         this.context = context;
     }

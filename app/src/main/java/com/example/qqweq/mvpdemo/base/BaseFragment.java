@@ -3,6 +3,8 @@ package com.example.qqweq.mvpdemo.base;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +15,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.example.qqweq.mvpdemo.R;
+
+import java.io.IOException;
 
 /**
  * 主要是封装基础类
@@ -50,6 +54,12 @@ public abstract class BaseFragment extends Fragment {
     private void addContentView(LayoutInflater inflater) {
         View contentView = inflater.inflate(setContentLayout(), null, false);
         fl_container.addView(contentView);
+    }
+
+    public FragmentTransaction getfragmentTransaction() {
+        FragmentManager manager = getFragmentManager();
+        FragmentTransaction transaction = manager.beginTransaction();
+        return transaction;
     }
 
     /**

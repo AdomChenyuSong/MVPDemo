@@ -7,6 +7,7 @@ import java.io.Serializable;
  */
 
 public class BaseEntity implements Serializable {
+    //{"code":50002,"msg":"用户名和密码不匹配，请重新输入。","detail":"用户名和密码不匹配，请重新输入。","time":1537866062480,"timestamp":1537866062481}
     public int code = 200;
     public String msg;
 
@@ -14,16 +15,16 @@ public class BaseEntity implements Serializable {
         return code;
     }
 
-    public void setStatus_code(int status_code) {
-        this.code = status_code;
+    public void setStatus_code(int code) {
+        this.code = code;
     }
 
     public String getError_msg() {
         return msg;
     }
 
-    public void setError_msg(String error_msg) {
-        this.msg = error_msg;
+    public void setError_msg(String msg) {
+        this.msg = msg;
     }
 
 }

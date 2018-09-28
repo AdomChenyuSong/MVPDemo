@@ -1,5 +1,6 @@
 package com.example.qqweq.mvpdemo.dialog;
 
+import android.app.Activity;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.view.View;
@@ -16,9 +17,9 @@ public class NormalDialog extends BaseDialog implements View.OnClickListener {
     private TextView dialog_tv_confirm;
     private TextView dialog_tv_cancel;
     private setClickListener listener;
-    private Context mContext;
+    private Activity mContext;
 
-    public NormalDialog(@NonNull Context context) {
+    public NormalDialog(@NonNull Activity context) {
         super(context);
         mContext = context;
     }

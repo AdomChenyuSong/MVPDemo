@@ -1,8 +1,9 @@
-package com.example.qqweq.mvpdemo.fragment;
+package com.example.qqweq.mvpdemo.presenter;
 
 import com.example.qqweq.mvpdemo.bean.AppVersionModel;
 import com.example.qqweq.mvpdemo.connection.ApiSubscriber;
 import com.example.qqweq.mvpdemo.connection.RxClient;
+import com.example.qqweq.mvpdemo.mvpview.WelcomeView;
 import com.example.qqweq.mvpdemo.mvp.BasePresenter;
 
 /**

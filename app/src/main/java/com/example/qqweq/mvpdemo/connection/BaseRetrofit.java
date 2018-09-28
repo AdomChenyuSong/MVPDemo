@@ -1,13 +1,21 @@
 package com.example.qqweq.mvpdemo.connection;
 
 import android.util.Log;
+
 import com.example.qqweq.mvpdemo.Configuration;
+
 import java.io.IOException;
+import java.io.Reader;
+import java.nio.charset.Charset;
 import java.util.concurrent.TimeUnit;
+
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
+import okhttp3.ResponseBody;
+import okio.Buffer;
+import okio.BufferedSource;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -51,8 +59,13 @@ public class BaseRetrofit {
         @Override
         public Response intercept(Chain chain) throws IOException {
             Request request = chain.request();
-            Log.e("SCY", " - - - - " + request.url().toString());
+            Log.e("SCY", " - - requestUrl - - " + request.url().toString());
             Response response = chain.proceed(request);
+            BufferedSource source = response.body().source();
+            source.request(Long.MAX_VALUE); // request the entire body.
+            Buffer buffer = source.buffer();
+            String responseBodyString = buffer.clone().readString(Charset.forName("UTF-8"));
+            Log.e("SCY", " - - requestData - - " + responseBodyString);
             return response;
         }
     }

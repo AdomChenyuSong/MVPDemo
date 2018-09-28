@@ -1,5 +1,6 @@
 package com.example.qqweq.mvpdemo.dialog;
 
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
@@ -22,22 +23,22 @@ public abstract class BaseDialog extends Dialog {
 
     protected abstract void initView(View view);
 
-    public BaseDialog(@NonNull Context context) {
-        super(context,R.style.MyDialogStyle);
-        this.context = context;
-    }
-
-    public BaseDialog(@NonNull Context context, int themeResId) {
+    public BaseDialog(@NonNull Activity context) {
         super(context, R.style.MyDialogStyle);
         this.context = context;
     }
 
-    protected BaseDialog(@NonNull Context context, boolean cancelable, @Nullable OnCancelListener cancelListener) {
+    public BaseDialog(@NonNull Activity context, int themeResId) {
+        super(context, R.style.MyDialogStyle);
+        this.context = context;
+    }
+
+    protected BaseDialog(@NonNull Activity context, boolean cancelable, @Nullable OnCancelListener cancelListener) {
         super(context, cancelable, cancelListener);
         this.context = context;
     }
 
-    private Context context;
+    private Activity context;
     private boolean isCancelable = false;
     private boolean isCancelOutside = false;
 
@@ -75,6 +76,12 @@ public abstract class BaseDialog extends Dialog {
         setContentView(view);
         setCancelable(isCancelable);
         setCanceledOnTouchOutside(isCancelOutside);
-
+        // 将对话框的大小按屏幕大小的百分比设置
+        WindowManager windowManager = context.getWindowManager();
+        Display display = windowManager.getDefaultDisplay();
+        WindowManager.LayoutParams lp = getWindow().getAttributes();
+        lp.width = (int) (display.getWidth() * 0.40); //设置宽度
+        lp.height = (int) (display.getHeight() * 0.40);
+        getWindow().setAttributes(lp);
     }
 }

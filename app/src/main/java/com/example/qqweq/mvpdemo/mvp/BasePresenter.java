@@ -1,10 +1,20 @@
 package com.example.qqweq.mvpdemo.mvp;
 
 
+import android.app.Activity;
 import android.content.Context;
+
+import com.example.qqweq.mvpdemo.bean.BaseEntity;
+import com.example.qqweq.mvpdemo.connection.ApiException;
 
 import java.lang.ref.WeakReference;
 
+import io.reactivex.Observable;
+import io.reactivex.ObservableSource;
+import io.reactivex.ObservableTransformer;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.functions.Function;
+import io.reactivex.schedulers.Schedulers;
 import okhttp3.Call;
 
 /**
@@ -14,14 +24,14 @@ import okhttp3.Call;
 public abstract class BasePresenter<V> {
     private WeakReference<V> mView;
     public Call mCall;
-    public Context mContext;
+    public Activity mContext;
 
     /**
      * 绑定view
      *
      * @param mView
      */
-    public void attachView(V mView, Context mContext) {
+    public void attachView(V mView, Activity mContext) {
         this.mView = new WeakReference<>(mView);
         this.mContext = mContext;
     }

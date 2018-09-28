@@ -1,25 +1,38 @@
 package com.example.qqweq.mvpdemo.connection;
 
+import android.text.TextUtils;
+
 import com.example.qqweq.mvpdemo.bean.AppVersionModel;
 import com.example.qqweq.mvpdemo.bean.BaseEntity;
 import com.example.qqweq.mvpdemo.bean.FinishedDataBean;
+import com.example.qqweq.mvpdemo.bean.LoginModel;
+import com.example.qqweq.mvpdemo.connection.netinterface.LoginService;
 import com.example.qqweq.mvpdemo.connection.netinterface.MyService;
 import com.example.qqweq.mvpdemo.connection.netinterface.VersionService;
+
+import org.json.JSONObject;
+
+import java.util.HashMap;
 import java.util.List;
+
 import io.reactivex.Observable;
 import io.reactivex.ObservableSource;
 import io.reactivex.ObservableTransformer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.functions.Function;
 import io.reactivex.schedulers.Schedulers;
+import okhttp3.MediaType;
+import okhttp3.RequestBody;
 
 
 /**
  * Created by qqweq on 2018/2/28.
  */
 
-public class RxClient<T> {
+public class RxClient {
     /**
+     * ；
+     *
      * @param page
      * @param size
      * @return
@@ -40,6 +53,24 @@ public class RxClient<T> {
     }
 
     /**
+     * 登录界面
+     *
+     * @param userName
+     * @param password
+     * @return
+     */
+    public static Observable<LoginModel> setLogin(String userName, String password) {
+        HashMap<String, String> hashMap = new HashMap<>();
+        hashMap.put("idcard", userName);
+        hashMap.put("pass", password);
+        hashMap.put("deviceid", "170976fa8aa11f63705");
+        String jsonString = new JSONObject(hashMap).toString();
+        RequestBody body = RequestBody.create(MediaType.parse("application/json; charset=utf-8"), jsonString);
+        return BaseRetrofit.getInstance().createService(LoginService.class).setLogin(body);
+    }
+
+    /**
+     * 数据转换
      * ----------------------------------------------------------------------------------------------------------------
      **/
     public static class DefaultTransformer<T> implements ObservableTransformer<T, T> {
@@ -52,8 +83,8 @@ public class RxClient<T> {
                     .map(new Function<T, T>() {
                         @Override
                         public T apply(T tBaseEntity) throws Exception {
-                            int status_code = ((BaseEntity)tBaseEntity).getStatus_code();
-                            String status_msg =  ((BaseEntity)tBaseEntity).getError_msg();
+                            int status_code = ((BaseEntity) tBaseEntity).getStatus_code();
+                            String status_msg = ((BaseEntity) tBaseEntity).getError_msg();
                             if (status_code != 200) {
                                 throw new ApiException(status_code, status_msg);
                             }
@@ -63,27 +94,9 @@ public class RxClient<T> {
         }
     }
 
+    //
     public static <T> DefaultTransformer<T> create() {
         return new DefaultTransformer<>();
     }
 
-//    public <T> ObservableTransformer<T, T> create() {
-//        return new ObservableTransformer<T, T>() {
-//
-//            @Override
-//            public ObservableSource<T> apply(Observable<T> upstream) {
-//                return upstream.subscribeOn(Schedulers.io()).unsubscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).map(new Function<T, T>() {
-//                    @Override
-//                    public T apply(T t) throws Exception {
-//                        int status_code = ((BaseEntity<T>) t).getStatus_code();
-//                        String status_msg = ((BaseEntity<T>) t).getError_msg();
-//                        if (status_code != 200) {
-//                            throw new ApiException(status_code, status_msg);
-//                        }
-//                        return t;
-//                    }
-//                });
-//            }
-//        };
-//    }
 }

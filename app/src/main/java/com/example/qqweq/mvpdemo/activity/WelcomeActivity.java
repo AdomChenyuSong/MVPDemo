@@ -2,12 +2,11 @@ package com.example.qqweq.mvpdemo.activity;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.widget.TextView;
-
 import com.example.qqweq.mvpdemo.R;
 import com.example.qqweq.mvpdemo.base.BaseActivity;
+import com.example.qqweq.mvpdemo.fragment.HomeFragment;
+import com.example.qqweq.mvpdemo.fragment.LoginFragment;
 import com.example.qqweq.mvpdemo.fragment.WelcomeFragment;
 
 /**
@@ -28,9 +27,8 @@ public class WelcomeActivity extends BaseActivity {
 
     @Override
     protected void initView() {
-        FragmentManager manager = getSupportFragmentManager();
-        FragmentTransaction transaction = manager.beginTransaction();
-        transaction.replace(R.id.fl_container, new WelcomeFragment());
+        FragmentTransaction transaction = getragmentTransaction();
+        transaction.replace(R.id.fl_container, new LoginFragment());
         transaction.commitAllowingStateLoss();
     }
 

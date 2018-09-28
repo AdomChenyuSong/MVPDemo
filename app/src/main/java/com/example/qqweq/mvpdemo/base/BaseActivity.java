@@ -3,6 +3,8 @@ package com.example.qqweq.mvpdemo.base;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
@@ -11,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
 import com.example.qqweq.mvpdemo.R;
 import com.example.qqweq.mvpdemo.untils.StatusBarUtil;
 
@@ -51,6 +54,7 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
         initView();
         initData(bundle);
     }
+
     /**
      * 设置状态栏颜色
      */
@@ -58,15 +62,23 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
         StatusBarUtil.setWindowStatusBarColor(this, resColor, true);
     }
 
+    public FragmentTransaction getragmentTransaction() {
+        FragmentManager manager = getSupportFragmentManager();
+        FragmentTransaction transaction = manager.beginTransaction();
+        return transaction;
+    }
+
     protected abstract int setContentLayout();
+
     protected abstract void initView();
+
     protected abstract void initData(Bundle bundle);
 
     public View addContentView(LayoutInflater inflater) {
         LinearLayout mParentView = (LinearLayout) inflater.inflate(R.layout.base_activity, null);
         View subActivityView = inflater.inflate(setContentLayout(), null);
-        LinearLayout.LayoutParams params=new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
-        mParentView.addView(subActivityView,params);
+        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+        mParentView.addView(subActivityView, params);
         initBaseView(mParentView);
         return mParentView;
     }

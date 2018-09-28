@@ -19,7 +19,7 @@ public abstract class MvpFragment<V, P extends BasePresenter<V>> extends BaseFra
         super.onCreate(savedInstanceState);
         mPresenter = initPresenter();
         if (mPresenter != null) {
-            mPresenter.attachView((V) this, getContext());
+            mPresenter.attachView((V) this, getActivity());
         }
     }
 

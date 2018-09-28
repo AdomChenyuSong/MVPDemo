@@ -1,4 +1,4 @@
-package com.example.qqweq.mvpdemo.fragment;
+package com.example.qqweq.mvpdemo.mvpview;
 
 import com.example.qqweq.mvpdemo.bean.AppVersionModel;
 import com.example.qqweq.mvpdemo.mvp.BaseView;
