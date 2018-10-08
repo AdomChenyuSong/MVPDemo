@@ -6,6 +6,9 @@ import android.view.View;
 
 import com.example.qqweq.mvpdemo.R;
 import com.example.qqweq.mvpdemo.bean.AppVersionModel;
+import com.example.qqweq.mvpdemo.bean.ObjectModel;
+import com.example.qqweq.mvpdemo.connection.ApiSubscriber;
+import com.example.qqweq.mvpdemo.connection.RxClient;
 import com.example.qqweq.mvpdemo.dialog.NormalDialog;
 import com.example.qqweq.mvpdemo.mvp.MvpFragment;
 import com.example.qqweq.mvpdemo.mvpview.WelcomeView;
@@ -58,9 +61,10 @@ public class WelcomeFragment extends MvpFragment<WelcomeView, WelcomeFresenter> 
         }
     }
 
+    /**
+     * 切换fragment
+     */
     private void transToLogin() {
-        FragmentTransaction transaction = getfragmentTransaction();
-        transaction.replace(R.id.fl_container, new LoginFragment());
-        transaction.commitAllowingStateLoss();
+        changeFragment(new LoginFragment());
     }
 }

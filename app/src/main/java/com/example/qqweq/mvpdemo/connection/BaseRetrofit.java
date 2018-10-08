@@ -3,6 +3,7 @@ package com.example.qqweq.mvpdemo.connection;
 import android.util.Log;
 
 import com.example.qqweq.mvpdemo.Configuration;
+import com.example.qqweq.mvpdemo.untils.SharedPrefenceUtils;
 
 import java.io.IOException;
 import java.io.Reader;
@@ -76,7 +77,9 @@ public class BaseRetrofit {
         public Response intercept(Chain chain) throws IOException {
             Request request = chain.request();
             Request.Builder builder = request.newBuilder();
-            builder.addHeader("token", "token");
+            Object token = SharedPrefenceUtils.getInstance().getValue(SharedPrefenceUtils.USERTOKEN, "token");
+            builder.addHeader("token", (String) token);
+//            builder.addHeader("token", "token");
             builder.addHeader("type", "android");
             return chain.proceed(request);
         }

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageView
+        android:id="@+id/img_main_header"
+        android:scaleType="fitXY"
+        android:src="@drawable/new_main_header"
+        android:layout_width="match_parent"
+        android:layout_height="196px" />
+
+    <ImageView
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_main_header"
+        android:layout_marginRight="190px"
+        android:layout_marginLeft="190px"
+        android:id="@+id/img_subject"
+        android:scaleType="centerCrop"
+        android:src="@drawable/new_main_select_subject"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        app:layout_constraintBottom_toBottomOf="@+id/img_subject"
+        app:layout_constraintTop_toTopOf="@+id/img_subject"
+        app:layout_constraintLeft_toRightOf="@+id/img_subject"
+        app:layout_constraintTop_toBottomOf="@+id/img_main_header"
+        android:id="@+id/tv_subject"
+        android:layout_marginLeft="10px"
+        android:text="@string/select_subject"
+        android:textColor="@color/color_b4b8c5"
+        android:textSize="@dimen/text_size_9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <com.example.qqweq.mvpdemo.view.WrapLayout
+        android:layout_marginRight="190px"
+        android:layout_marginLeft="190px"
+        app:layout_constraintTop_toBottomOf="@+id/img_subject"
+        android:layout_marginTop="30px"
+        android:id="@+id/myFlowLayout"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </com.example.qqweq.mvpdemo.view.WrapLayout>
+
+    <FrameLayout
+        app:layout_constraintTop_toBottomOf="@+id/myFlowLayout"
+        android:layout_marginRight="190px"
+        android:layout_marginLeft="190px"
+        android:id="@+id/fr_gridview"
+        android:layout_marginTop="50px"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </FrameLayout>
+</android.support.constraint.ConstraintLayout>

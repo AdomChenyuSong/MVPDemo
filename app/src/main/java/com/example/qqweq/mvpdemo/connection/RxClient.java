@@ -6,9 +6,11 @@ import com.example.qqweq.mvpdemo.bean.AppVersionModel;
 import com.example.qqweq.mvpdemo.bean.BaseEntity;
 import com.example.qqweq.mvpdemo.bean.FinishedDataBean;
 import com.example.qqweq.mvpdemo.bean.LoginModel;
+import com.example.qqweq.mvpdemo.bean.ObjectModel;
 import com.example.qqweq.mvpdemo.connection.netinterface.LoginService;
 import com.example.qqweq.mvpdemo.connection.netinterface.MyService;
 import com.example.qqweq.mvpdemo.connection.netinterface.VersionService;
+import com.example.qqweq.mvpdemo.untils.SharedPrefenceUtils;
 
 import org.json.JSONObject;
 
@@ -70,6 +72,16 @@ public class RxClient {
     }
 
     /**
+     * 获取科目
+     * @return
+     */
+    public static Observable<List<ObjectModel>> getObject() {
+        Object value = SharedPrefenceUtils.getInstance().getValue(SharedPrefenceUtils.SHARED_USER_ID, 0);
+        Object token = SharedPrefenceUtils.getInstance().getValue(SharedPrefenceUtils.USERTOKEN, "token");
+        return BaseRetrofit.getInstance().createService(LoginService.class).getObject((Integer) value, (String) token);
+    }
+
+    /**
      * 数据转换
      * ----------------------------------------------------------------------------------------------------------------
      **/
@@ -83,7 +95,7 @@ public class RxClient {
                     .map(new Function<T, T>() {
                         @Override
                         public T apply(T tBaseEntity) throws Exception {
-                            int status_code = ((BaseEntity) tBaseEntity).getStatus_code();
+                            int status_code = (int) ((BaseEntity) tBaseEntity).getStatus_code();
                             String status_msg = ((BaseEntity) tBaseEntity).getError_msg();
                             if (status_code != 200) {
                                 throw new ApiException(status_code, status_msg);

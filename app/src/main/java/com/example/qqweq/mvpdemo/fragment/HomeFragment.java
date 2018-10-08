@@ -2,7 +2,6 @@ package com.example.qqweq.mvpdemo.fragment;
 
 import android.os.Bundle;
 import android.view.View;
-
 import com.example.qqweq.mvpdemo.R;
 import com.example.qqweq.mvpdemo.mvp.MvpFragment;
 import com.example.qqweq.mvpdemo.mvpview.HomeView;

@@ -1,5 +1,6 @@
 package com.example.qqweq.mvpdemo.fragment;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.text.TextUtils;
@@ -15,6 +16,7 @@ import com.example.qqweq.mvpdemo.mvp.MvpFragment;
 import com.example.qqweq.mvpdemo.mvpview.LoginView;
 import com.example.qqweq.mvpdemo.presenter.LoginPresenter;
 import com.example.qqweq.mvpdemo.untils.NetworkStateReceiver;
+import com.example.qqweq.mvpdemo.untils.SharedPrefenceUtils;
 import com.example.qqweq.mvpdemo.untils.ToastUtils;
 import com.example.qqweq.mvpdemo.untils.Utils;
 import com.jakewharton.rxbinding2.InitialValueObservable;
@@ -230,8 +232,8 @@ public class LoginFragment extends MvpFragment<LoginView, LoginPresenter> implem
 
     @Override
     public void getLogin(LoginModel loginModel) {
-        FragmentTransaction fragmentTransaction = getfragmentTransaction();
-        fragmentTransaction.replace(R.id.fl_container, new HomeFragment());
-        fragmentTransaction.commitAllowingStateLoss();
+        SharedPrefenceUtils.getInstance().putValue(SharedPrefenceUtils.USERTOKEN,loginModel.getToken());
+        SharedPrefenceUtils.getInstance().putValue(SharedPrefenceUtils.SHARED_USER_ID,loginModel.getUserid());
+        changeFragment(new NewHomeFragment());
     }
 }

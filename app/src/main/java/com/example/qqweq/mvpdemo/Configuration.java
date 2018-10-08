@@ -11,5 +11,5 @@ public class Configuration {
      * //正式库地址: http://www.reebo.cn
      * //新测试环境 http://192.168.20.151
      */
-    public static final String BASE_URL = "http://192.168.20.151/";
+    public static final String BASE_URL = "http://www.reebo.cn/";
 }

@@ -3,6 +3,7 @@ package com.example.qqweq.mvpdemo.base;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
@@ -67,7 +68,14 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
         FragmentTransaction transaction = manager.beginTransaction();
         return transaction;
     }
-
+    /**
+     * 切换fragment
+     */
+    public void changeFragment(Fragment fragment) {
+        FragmentTransaction transaction = getragmentTransaction();
+        transaction.replace(R.id.fl_container, fragment);
+        transaction.commitAllowingStateLoss();
+    }
     protected abstract int setContentLayout();
 
     protected abstract void initView();

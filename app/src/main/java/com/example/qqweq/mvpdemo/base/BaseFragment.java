@@ -15,6 +15,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.example.qqweq.mvpdemo.R;
+import com.example.qqweq.mvpdemo.fragment.WelcomeFragment;
 
 import java.io.IOException;
 
@@ -56,10 +57,22 @@ public abstract class BaseFragment extends Fragment {
         fl_container.addView(contentView);
     }
 
+    /**
+     * 获取FragmentTransaction
+     * @return
+     */
     public FragmentTransaction getfragmentTransaction() {
         FragmentManager manager = getFragmentManager();
         FragmentTransaction transaction = manager.beginTransaction();
         return transaction;
+    }
+    /**
+     * 切换fragment
+     */
+    public void changeFragment(Fragment fragment) {
+        FragmentTransaction transaction = getfragmentTransaction();
+        transaction.replace(R.id.fl_container, fragment);
+        transaction.commitAllowingStateLoss();
     }
 
     /**

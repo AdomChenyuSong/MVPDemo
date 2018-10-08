@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ZLoadingView">
+        <attr name="z_type">
+            <enum name="CircleBuilder" value="0"/>
+            <enum name="ClockBuilder" value="1"/>
+            <enum name="StarBuilder" value="2"/>
+            <enum name="LeafBuilder" value="3"/>
+            <enum name="DoubleCircleBuilder" value="4"/>
+            <enum name="PacManBuilder" value="5"/>
+            <enum name="ElasticBallBuilder" value="6"/>
+            <enum name="InfectionBallBuilder" value="7"/>
+            <enum name="IntertwineBuilder" value="8"/>
+            <enum name="TextBuilder" value="9"/>
+            <enum name="SearchPathBuilder" value="10"/>
+            <enum name="RotateCircleBuilder" value="11"/>
+            <enum name="SingleCircleBuilder" value="12"/>
+        </attr>
+        <attr name="z_color" format="color"/>
+    </declare-styleable>
+    <declare-styleable name="ZLoadingTextView">
+        <attr name="z_text" format="string"/>
+    </declare-styleable>
+    <declare-styleable name="TabLayoutTitleViewSize">
+        <attr name="title_size" format="integer"/>
+        <attr name="title_width" format="integer"/>
+        <attr name="title_height" format="integer"/>
+    </declare-styleable>
+    3<declare-styleable name="Loan_ColorProgressView">
+    <attr name="corner_pro_int_size" format="dimension" />
+    <attr name="corner_pro_text_size" format="dimension" />
+    <attr name="corner_bg_circle_color" format="color" />
+</declare-styleable>
+</resources>

@@ -27,9 +27,10 @@ public class WelcomeActivity extends BaseActivity {
 
     @Override
     protected void initView() {
-        FragmentTransaction transaction = getragmentTransaction();
-        transaction.replace(R.id.fl_container, new LoginFragment());
-        transaction.commitAllowingStateLoss();
+        changeFragment(new WelcomeFragment());
+//        FragmentTransaction transaction = getragmentTransaction();
+//        transaction.replace(R.id.fl_container,);
+//        transaction.commitAllowingStateLoss();
     }
 
     @Override

@@ -31,4 +31,13 @@
         <item name="android:backgroundDimEnabled">true</item>
         <!--模糊-->
     </style>
+    <style name="subject_button" parent="@style/Widget.AppCompat.Button.Borderless">
+        <item name="android:textSize">30px</item>
+        <item name="android:layout_width">180px</item>
+        <item name="android:layout_height">74px</item>
+        <item name="android:background">@drawable/subject_button</item>
+        <item name="android:textColor">@color/subject_text_button</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center_vertical</item>
+    </style>
 </resources>
