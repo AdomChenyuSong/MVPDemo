@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="64px"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:text="哈哈哈哈啊哈哈哈哈哈哈哈"
+        android:gravity="bottom"
+        android:id="@+id/chapter_name"
+        android:layout_width="750px"
+        android:layout_height="match_parent"
+        android:ellipsize="end"
+        android:paddingLeft="102px"
+        android:singleLine="true"
+        android:textColor="@color/text_666666"
+        android:textSize="26px" />
+
+    <ProgressBar
+        app:layout_constraintRight_toLeftOf="@+id/chapter_video"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/chapter_progress"
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:layout_width="300dp"
+        android:layout_height="10dp"
+        android:max="100"
+        android:progressDrawable="@drawable/progress_course_gray" />
+
+    <TextView
+        app:layout_constraintBottom_toBottomOf="@+id/chapter_progress"
+        app:layout_constraintLeft_toLeftOf="@+id/chapter_progress"
+        android:paddingLeft="80px"
+        android:id="@+id/chapter_score"
+        android:layout_width="92px"
+        android:layout_height="10dp"
+        android:background="@drawable/progress_text_green"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:padding="0dp"
+        android:text="100"
+        android:textColor="@color/green_2ec5c2"
+        android:textSize="8sp" />
+    <ImageView
+        app:layout_constraintRight_toRightOf="parent"
+        android:id="@+id/chapter_video"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="bottom"
+        android:paddingLeft="16px"
+        android:paddingRight="160px"
+        android:paddingTop="38px"
+        android:src="@drawable/ic_play_green" />
+</android.support.constraint.ConstraintLayout>

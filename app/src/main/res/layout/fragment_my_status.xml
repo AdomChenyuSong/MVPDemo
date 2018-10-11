@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ll_top"
+        android:layout_width="match_parent"
+        android:layout_height="70px"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="90px"
+            android:layout_weight="1"
+            android:drawableLeft="@drawable/image_excellent"
+            android:drawablePadding="10px"
+            android:text="@string/string_excellent"
+            android:textColor="@color/text_999999"
+            android:textSize="@dimen/text_size_9" />
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20px"
+            android:layout_weight="1"
+            android:drawableLeft="@drawable/image_good"
+            android:drawablePadding="10px"
+            android:text="@string/string_good"
+            android:textColor="@color/text_999999"
+            android:textSize="@dimen/text_size_9" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20px"
+            android:layout_weight="1"
+            android:drawableLeft="@drawable/image_pass"
+            android:drawablePadding="10px"
+            android:text="@string/string_pass"
+            android:textColor="@color/text_999999"
+            android:textSize="@dimen/text_size_9" />
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20px"
+            android:layout_weight="1"
+            android:drawableLeft="@drawable/image_bad"
+            android:drawablePadding="10px"
+            android:gravity="center_vertical"
+            android:text="@string/string_bad"
+            android:textColor="@color/text_999999"
+            android:textSize="@dimen/text_size_9" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20px"
+            android:layout_weight="1"
+            android:drawableLeft="@drawable/image_not_learn"
+            android:drawablePadding="10px"
+            android:gravity="center_vertical"
+            android:text="@string/string_not_learnt"
+            android:textColor="@color/text_999999"
+            android:textSize="@dimen/text_size_9" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/img_line"
+        android:layout_width="match_parent"
+        android:layout_height="4px"
+        android:background="@drawable/line_dfdfdf"
+        android:layerType="software"
+        app:layout_constraintTop_toBottomOf="@+id/ll_top" />
+
+    <TextView
+        android:id="@+id/tv_hint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10px"
+        android:layout_marginTop="10px"
+        android:gravity="center_horizontal"
+        android:text="@string/string_home_tips"
+        android:textColor="@color/text_999999"
+        android:textSize="@dimen/text_size_9"
+        app:layout_constraintTop_toBottomOf="@+id/img_line" />
+
+    <FrameLayout
+        android:id="@+id/fl_body"
+        android:layout_marginTop="10px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/tv_hint">
+
+    </FrameLayout>
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:id="@+id/cl_item_info"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <com.example.qqweq.mvpdemo.view.ColorProgressView
+        android:id="@+id/seekar_circular"
+        android:layout_centerHorizontal="true"
+        app:corner_pro_int_size="2px"
+        app:corner_pro_text_size="2px"
+        app:corner_bg_circle_color="@color/color_f1f3f6"
+        android:layout_width="60dp"
+        android:layout_height="60dp" />
+    <ImageView
+        app:layout_constraintBottom_toBottomOf="@+id/seekar_circular"
+        app:layout_constraintTop_toTopOf="@+id/seekar_circular"
+        app:layout_constraintLeft_toLeftOf="@+id/seekar_circular"
+        app:layout_constraintRight_toRightOf="@+id/seekar_circular"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:src="@drawable/new_main_chapter"
+        android:id="@+id/gv_image"
+        android:layout_width="24dp"
+        android:layout_height="24dp" />
+    <TextView
+        app:layout_constraintRight_toRightOf="@+id/seekar_circular"
+        app:layout_constraintLeft_toLeftOf="@+id/seekar_circular"
+        app:layout_constraintTop_toBottomOf="@+id/seekar_circular"
+        android:id="@+id/gv_names"
+        android:textColor="@color/color_b4b8c5"
+        android:textSize="@dimen/text_size_9"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</android.support.constraint.ConstraintLayout>

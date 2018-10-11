@@ -27,7 +27,7 @@ android {
     }
 }
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.android.support:appcompat-v7:26.1.0'
     implementation 'com.android.support.constraint:constraint-layout:1.1.2'
     testImplementation 'junit:junit:4.12'
@@ -47,6 +47,7 @@ dependencies {
     //目前最新版本
     provided 'org.greenrobot:eventbus-annotation-processor:3.0.1'
     compile 'org.greenrobot:eventbus:3.1.1'
-    annotationProcessor  'org.greenrobot:eventbus-annotation-processor:3.1.1'
+    annotationProcessor 'org.greenrobot:eventbus-annotation-processor:3.1.1'
     compile 'com.jakewharton.rxbinding2:rxbinding:2.0.0'
+    implementation files('libs/android-iconify-1.0.3_change.jar')
 }

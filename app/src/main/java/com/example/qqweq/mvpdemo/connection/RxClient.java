@@ -1,12 +1,14 @@
 package com.example.qqweq.mvpdemo.connection;
 
 import android.text.TextUtils;
+import android.util.Log;
 
 import com.example.qqweq.mvpdemo.bean.AppVersionModel;
 import com.example.qqweq.mvpdemo.bean.BaseEntity;
 import com.example.qqweq.mvpdemo.bean.FinishedDataBean;
 import com.example.qqweq.mvpdemo.bean.LoginModel;
 import com.example.qqweq.mvpdemo.bean.ObjectModel;
+import com.example.qqweq.mvpdemo.bean.SectionModel;
 import com.example.qqweq.mvpdemo.connection.netinterface.LoginService;
 import com.example.qqweq.mvpdemo.connection.netinterface.MyService;
 import com.example.qqweq.mvpdemo.connection.netinterface.VersionService;
@@ -71,14 +73,27 @@ public class RxClient {
         return BaseRetrofit.getInstance().createService(LoginService.class).setLogin(body);
     }
 
+
     /**
      * 获取科目
+     *
      * @return
      */
     public static Observable<List<ObjectModel>> getObject() {
         Object value = SharedPrefenceUtils.getInstance().getValue(SharedPrefenceUtils.SHARED_USER_ID, 0);
-        Object token = SharedPrefenceUtils.getInstance().getValue(SharedPrefenceUtils.USERTOKEN, "token");
-        return BaseRetrofit.getInstance().createService(LoginService.class).getObject((Integer) value, (String) token);
+        String token = (String) SharedPrefenceUtils.getInstance().getValue(SharedPrefenceUtils.USERTOKEN, "token");
+        return BaseRetrofit.getInstance().createService(LoginService.class).getObject((Integer) value, token);
+    }
+
+    /**
+     * 获取科目信息
+     *
+     * @return
+     */
+    public static Observable<List<SectionModel>> getCourse() {
+        Object value = SharedPrefenceUtils.getInstance().getValue(SharedPrefenceUtils.SHARED_USER_ID, 0);
+        String token = (String) SharedPrefenceUtils.getInstance().getValue(SharedPrefenceUtils.USERTOKEN, "token");
+        return BaseRetrofit.getInstance().createService(LoginService.class).getCourse((Integer) value, token);
     }
 
     /**
@@ -95,7 +110,10 @@ public class RxClient {
                     .map(new Function<T, T>() {
                         @Override
                         public T apply(T tBaseEntity) throws Exception {
-                            int status_code = (int) ((BaseEntity) tBaseEntity).getStatus_code();
+                            if (tBaseEntity instanceof List) {
+                                return tBaseEntity;
+                            }
+                            double status_code = Double.parseDouble(String.valueOf(((BaseEntity) tBaseEntity).getStatus_code()));
                             String status_msg = ((BaseEntity) tBaseEntity).getError_msg();
                             if (status_code != 200) {
                                 throw new ApiException(status_code, status_msg);

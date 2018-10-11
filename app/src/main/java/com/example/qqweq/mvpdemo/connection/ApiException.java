@@ -6,14 +6,14 @@ package com.example.qqweq.mvpdemo.connection;
  */
 
 public class ApiException extends IllegalArgumentException {
-    private int code;
+    private double code;
 
-    public ApiException(int code, String msg) {
+    public ApiException(double code, String msg) {
         super(msg);
         this.code = code;
     }
 
-    public int getCode() {
+    public double getCode() {
         return code;
     }
 }

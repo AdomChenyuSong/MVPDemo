@@ -28,7 +28,7 @@ public class WrapLayout extends ViewGroup {
      * Button的style
      */
     public int BUTTON_STYLE = 1;
-    private int style;
+    private int style=BUTTON_STYLE;
     private View btn;
 
     public WrapLayout(Context context) {

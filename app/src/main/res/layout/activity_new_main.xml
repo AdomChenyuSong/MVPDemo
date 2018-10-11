@@ -50,10 +50,10 @@
 
     <FrameLayout
         app:layout_constraintTop_toBottomOf="@+id/myFlowLayout"
-        android:layout_marginRight="190px"
+        android:layout_marginRight="30px"
         android:layout_marginLeft="190px"
         android:id="@+id/fr_gridview"
-        android:layout_marginTop="50px"
+        android:layout_marginTop="20px"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">

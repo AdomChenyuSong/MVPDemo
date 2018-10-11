@@ -175,7 +175,7 @@ public class LoginFragment extends MvpFragment<LoginView, LoginPresenter> implem
                 } else {
                     login_iv_clean_pass.setVisibility(View.VISIBLE);
                 }
-                return TextUtils.isEmpty(charSequence) && TextUtils.isEmpty(charSequence) && !Utils.isLegelUserName(charSequence.toString().trim());
+                return TextUtils.isEmpty(charSequence) && TextUtils.isEmpty(charSequence2) && charSequence2.length() >= 6 && !Utils.isLegelUserName(charSequence.toString().trim());
             }
         }).subscribeOn(AndroidSchedulers.mainThread())
                 .observeOn(AndroidSchedulers.mainThread())
@@ -232,8 +232,8 @@ public class LoginFragment extends MvpFragment<LoginView, LoginPresenter> implem
 
     @Override
     public void getLogin(LoginModel loginModel) {
-        SharedPrefenceUtils.getInstance().putValue(SharedPrefenceUtils.USERTOKEN,loginModel.getToken());
-        SharedPrefenceUtils.getInstance().putValue(SharedPrefenceUtils.SHARED_USER_ID,loginModel.getUserid());
+        SharedPrefenceUtils.getInstance().putValue(SharedPrefenceUtils.USERTOKEN, loginModel.getToken());
+        SharedPrefenceUtils.getInstance().putValue(SharedPrefenceUtils.SHARED_USER_ID, loginModel.getUserid());
         changeFragment(new NewHomeFragment());
     }
 }

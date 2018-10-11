@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="170px"
+    android:layout_height="90px"
+    android:background="#30bdb6"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/home_iv_pretest_sprint"
+        android:layout_width="30px"
+        android:layout_height="30px"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="18px"
+        android:src="@drawable/shape_tab_my_status"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--考前冲刺的通知红点。 未查看的。会显示红点。-->
+    <ImageView
+        android:id="@+id/home_iv_notify_pretest_sprint"
+        android:layout_width="16px"
+        android:layout_height="16px"
+        android:layout_marginTop="15px"
+        android:background="@drawable/shap_red"
+        android:visibility="gone"
+        app:layout_constraintLeft_toRightOf="@+id/home_iv_pretest_sprint"
+        app:layout_constraintRight_toRightOf="@+id/home_iv_pretest_sprint"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/home_tv_pretest_sprint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="4dp"
+        android:gravity="center"
+        android:text="@string/pretest_sprint"
+        android:textColor="@color/tab_title_text"
+        android:textSize="@dimen/text_size_9"
+        app:layout_constraintTop_toBottomOf="@+id/home_iv_pretest_sprint" />
+
+</android.support.constraint.ConstraintLayout>
