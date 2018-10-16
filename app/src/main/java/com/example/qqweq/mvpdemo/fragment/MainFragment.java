@@ -18,7 +18,8 @@ import java.util.List;
 
 public class MainFragment extends BaseFragment implements TabFragment.tabChangListener {
     private TabFragment tabFragment;
-    private List<Fragment> fragmentList = new ArrayList<>(9);
+    private HomeFragment homeFragment;
+
 
     @Override
     public int setContentLayout() {
@@ -27,11 +28,12 @@ public class MainFragment extends BaseFragment implements TabFragment.tabChangLi
 
     @Override
     public void initData(Bundle data) {
+        homeFragment = new HomeFragment();
         FragmentTransaction fragmentTransaction = getfragmentTransaction();
         fragmentTransaction.add(R.id.frame_tab, tabFragment);
+        fragmentTransaction.add(R.id.frame_container, homeFragment);
         fragmentTransaction.commitAllowingStateLoss();
     }
-
 
     @Override
     public void initView(View view) {
@@ -41,6 +43,6 @@ public class MainFragment extends BaseFragment implements TabFragment.tabChangLi
 
     @Override
     public void tabChange(int position) {
-
+        homeFragment.changeFragment(position);
     }
 }

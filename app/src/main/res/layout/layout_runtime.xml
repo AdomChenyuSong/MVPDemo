@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cn.com.linktrust.als.ipad.util.view.CustomScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/runtime_scrollview"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fadeScrollbars="false"
+    android:fillViewport="true"
+    android:scrollbarFadeDuration="0"
+    android:scrollbarThumbVertical="@drawable/ic_thumb"
+    android:scrollbarTrackVertical="@drawable/shap_scrollbar"
+    android:scrollbars="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/runtime_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingRight="20px" />
+
+    </LinearLayout>
+</cn.com.linktrust.als.ipad.util.view.CustomScrollView>

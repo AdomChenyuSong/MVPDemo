@@ -22,7 +22,6 @@ public class TabMyStatusFragment extends BaseFragment {
         FragmentTransaction fragmentTransaction = getfragmentTransaction();
         fragmentTransaction.add(R.id.fl_body, new MyStatusFragment());
         fragmentTransaction.commitAllowingStateLoss();
-
     }
 
     @Override

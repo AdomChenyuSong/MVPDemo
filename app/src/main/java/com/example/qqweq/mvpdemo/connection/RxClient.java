@@ -124,9 +124,9 @@ public class RxClient {
         }
     }
 
-    //
     public static <T> DefaultTransformer<T> create() {
         return new DefaultTransformer<>();
     }
+
 
 }

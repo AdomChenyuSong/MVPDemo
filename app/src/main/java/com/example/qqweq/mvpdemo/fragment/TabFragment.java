@@ -2,8 +2,10 @@ package com.example.qqweq.mvpdemo.fragment;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -27,7 +29,7 @@ public class TabFragment extends BaseRecycleFragment {
     public int names[] = {R.string.chapter_state, R.string.self_test, R.string.pretest_sprint, R.string.home_work, R.string.practice_with_the_hall, R.string.test_evaluation, R.string.online_classroom, R.string.wrong_title_summary, R.string.ask_for_explanation};
     public int picture[] = {R.drawable.shape_tab_my_status, R.drawable.shape_tab_knowledge, R.drawable.shape_tab_pretest_sprint, R.drawable.shape_tab_homework, R.drawable.shape_tab_task, R.drawable.shape_tab_evaluating, R.drawable.shape_tab_micro_class, R.drawable.shape_tab_wrong_notes, R.drawable.shape_tab_explain};
     private tabChangListener listener;
-
+    private String TAG=TabFragment.class.getName();
     @Override
     public RecyclerView.LayoutManager manager() {
         LinearLayoutManager manager = new LinearLayoutManager(getActivity());

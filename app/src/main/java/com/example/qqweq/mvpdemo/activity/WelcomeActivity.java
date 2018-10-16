@@ -5,6 +5,7 @@ import android.support.annotation.Nullable;
 
 import com.example.qqweq.mvpdemo.R;
 import com.example.qqweq.mvpdemo.base.BaseActivity;
+import com.example.qqweq.mvpdemo.base.ChapterTreeStatusFragment;
 import com.example.qqweq.mvpdemo.fragment.LoginFragment;
 import com.example.qqweq.mvpdemo.fragment.MainFragment;
 import com.example.qqweq.mvpdemo.fragment.NewHomeFragment;
@@ -29,7 +30,7 @@ public class WelcomeActivity extends BaseActivity {
 
     @Override
     protected void initView() {
-        changeFragment(new LoginFragment());
+        changeFragment(new ChapterTreeStatusFragment());
 //        FragmentTransaction transaction = getragmentTransaction();
 //        transaction.replace(R.id.fl_container,);
 //        transaction.commitAllowingStateLoss();

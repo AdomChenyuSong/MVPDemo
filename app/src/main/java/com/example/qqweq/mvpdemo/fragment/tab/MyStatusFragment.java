@@ -5,22 +5,14 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.View;
-import android.view.ViewGroup;
 
 import com.example.qqweq.mvpdemo.R;
-import com.example.qqweq.mvpdemo.base.BaseCommenAdapter;
-import com.example.qqweq.mvpdemo.base.BaseListFragment;
 import com.example.qqweq.mvpdemo.base.BaseRecycleFragment;
 import com.example.qqweq.mvpdemo.bean.SectionModel;
 import com.example.qqweq.mvpdemo.common.CommonAdapter;
-import com.example.qqweq.mvpdemo.common.MultiItemTypeAdapter;
 import com.example.qqweq.mvpdemo.common.base.ViewHolder;
-import com.example.qqweq.mvpdemo.connection.BaseListProvider;
+import com.example.qqweq.mvpdemo.connection.ApiSubscriber;
 import com.example.qqweq.mvpdemo.connection.RxClient;
-import com.example.qqweq.mvpdemo.mvp.MvpFragment;
-import com.example.qqweq.mvpdemo.mvpview.MyStatusView;
-import com.example.qqweq.mvpdemo.presenter.MyStatusPresenter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,27 +34,11 @@ public class MyStatusFragment extends BaseRecycleFragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         RxClient.getCourse()
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Observer<List<SectionModel>>() {
-                    @Override
-                    public void onSubscribe(Disposable d) {
-
-                    }
-
+                .compose(RxClient.<List<SectionModel>>create())
+                .subscribe(new ApiSubscriber<List<SectionModel>>(getActivity()) {
                     @Override
                     public void onNext(List<SectionModel> modelList) {
-                        courseAdapter.notifyDataSetChanged();
-                    }
-
-                    @Override
-                    public void onError(Throwable e) {
-
-                    }
-
-                    @Override
-                    public void onComplete() {
-
+                        courseAdapter.addAllAdapterDatas(modelList);
                     }
                 });
     }
@@ -86,7 +62,7 @@ public class MyStatusFragment extends BaseRecycleFragment {
 
         @Override
         protected void convert(ViewHolder holder, SectionModel sectionModel, int position) {
-
+            holder.setText(R.id.chapter_name, sectionModel.getName());
         }
     }
 

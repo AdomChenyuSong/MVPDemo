@@ -59,6 +59,7 @@ public abstract class BaseFragment extends Fragment {
 
     /**
      * 获取FragmentTransaction
+     *
      * @return
      */
     public FragmentTransaction getfragmentTransaction() {
@@ -66,6 +67,7 @@ public abstract class BaseFragment extends Fragment {
         FragmentTransaction transaction = manager.beginTransaction();
         return transaction;
     }
+
     /**
      * 切换fragment
      */
@@ -106,8 +108,8 @@ public abstract class BaseFragment extends Fragment {
      * 展示无数据
      */
     public void showNoData() {
-        viewstub_error_page.inflate();
-        viewstub_no_data.setVisibility(View.GONE);
+        viewstub_no_data.inflate();
+        viewstub_error_page.setVisibility(View.GONE);
         fl_container.setVisibility(View.GONE);
     }
 
