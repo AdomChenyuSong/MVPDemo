@@ -2,34 +2,68 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="48px"
-    android:layout_marginTop="20px"
-    android:orientation="vertical"
+    android:layout_height="wrap_content"
     android:paddingLeft="50px">
 
     <TextView
-        android:id="@+id/title_view"
+        android:id="@+id/title_chapter"
         android:layout_width="146px"
-        android:layout_height="match_parent"
+        android:layout_height="48px"
+        android:layout_marginTop="20px"
+        android:gravity="center|right"
+        android:paddingRight="30px"
+        android:text="@string/string_chapter"
+        android:textColor="@color/text_999999"
+        android:textSize="@dimen/text_size_11"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <FrameLayout
+        android:id="@+id/fl_chaper"
+        android:layout_width="wrap_content"
+        android:layout_height="48px"
+        app:layout_constraintBottom_toBottomOf="@+id/title_chapter"
+        app:layout_constraintLeft_toRightOf="@+id/title_chapter"
+        app:layout_constraintTop_toTopOf="@+id/title_chapter"></FrameLayout>
+
+    <TextView
+        android:id="@+id/title_section"
+        android:layout_width="146px"
+        android:layout_height="48px"
+        android:layout_marginTop="20px"
         android:gravity="center|right"
         android:paddingRight="30px"
         android:text="@string/string_part"
         android:textColor="@color/text_999999"
-        android:textSize="@dimen/text_size_11" />
+        android:textSize="@dimen/text_size_11"
+        app:layout_constraintTop_toBottomOf="@+id/fl_chaper" />
 
-    <HorizontalScrollView
+    <FrameLayout
+        android:id="@+id/fl_section"
         android:layout_width="wrap_content"
         android:layout_height="48px"
-        android:paddingRight="30px"
-        android:scrollbars="none"
-        app:layout_constraintLeft_toRightOf="@+id/title_view">
+        app:layout_constraintBottom_toBottomOf="@+id/title_section"
+        app:layout_constraintLeft_toRightOf="@+id/title_section"
+        app:layout_constraintTop_toTopOf="@+id/title_section"></FrameLayout>
 
-        <LinearLayout
-            android:id="@+id/ll_tree_views"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center_vertical"
-            android:orientation="horizontal" />
-    </HorizontalScrollView>
+    <TextView
+        android:id="@+id/title_knowledges"
+        android:layout_width="146px"
+        android:layout_height="48px"
+        android:layout_marginTop="20px"
+        android:gravity="center|right"
+        android:paddingRight="30px"
+        android:text="@string/string_knowledge"
+        android:textColor="@color/text_999999"
+        android:textSize="@dimen/text_size_11"
+        app:layout_constraintTop_toBottomOf="@+id/title_section" />
+
+    <FrameLayout
+        android:id="@+id/fl_knowledges"
+        android:layout_width="wrap_content"
+        android:layout_height="48px"
+        app:layout_constraintBottom_toBottomOf="@+id/title_knowledges"
+        app:layout_constraintLeft_toRightOf="@+id/title_knowledges"
+        app:layout_constraintTop_toTopOf="@+id/title_knowledges"></FrameLayout>
 
 </android.support.constraint.ConstraintLayout>

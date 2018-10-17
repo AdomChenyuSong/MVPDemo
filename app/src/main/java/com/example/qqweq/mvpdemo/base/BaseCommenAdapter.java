@@ -2,7 +2,9 @@ package com.example.qqweq.mvpdemo.base;
 
 import android.content.Context;
 import android.view.View;
+
 import com.example.qqweq.mvpdemo.common.CommonAdapter;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,14 +26,15 @@ public abstract class BaseCommenAdapter<T> extends CommonAdapter<T> {
     }
 
     private void checkList() {
-        if (list == null) {
+        if (list == null || list.size() == 0) {
             list = new ArrayList<T>();
+            return;
         }
     }
 
-    public void addAllData(ArrayList<T> data) {
+    public void addAllData(List<T> data) {
         checkList();
-        list.addAll(list.size(), data);
+        addAllAdapterDatas(data);
     }
 
     /**

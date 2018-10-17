@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import com.example.qqweq.mvpdemo.common.base.ItemViewDelegate;
 import com.example.qqweq.mvpdemo.common.base.ItemViewDelegateManager;
 import com.example.qqweq.mvpdemo.common.base.ViewHolder;
+
 import java.util.List;
 
 /**
@@ -33,6 +34,7 @@ public class MultiItemTypeAdapter<T> extends RecyclerView.Adapter<ViewHolder> {
     }
 
     public void addAllAdapterDatas(List<T> data) {
+        mDatas.clear();
         mDatas.addAll(mDatas.size(), data);
         notifyDataSetChanged();
     }

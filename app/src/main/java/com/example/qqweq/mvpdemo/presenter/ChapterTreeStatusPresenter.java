@@ -9,6 +9,7 @@ import com.example.qqweq.mvpdemo.mvpview.ChapterTreeStatusView;
 import java.util.List;
 
 import io.reactivex.Observer;
+import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
 import okhttp3.RequestBody;
@@ -21,36 +22,37 @@ public class ChapterTreeStatusPresenter extends BasePresenter<ChapterTreeStatusV
     public void getChapterTress() {
         RxClient.getCourse()
                 .compose(RxClient.<List<SectionModel>>create())
+                .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new ApiSubscriber<List<SectionModel>>(mContext) {
                     @Override
                     public void onNext(List<SectionModel> loginModel) {
                         getView().getChapterTreeStatus(loginModel);
                     }
                 });
-        RxClient.getCode()
-                .subscribeOn(Schedulers.io())
-                .observeOn(Schedulers.io())
-                .subscribe(new Observer<RequestBody>() {
-                    @Override
-                    public void onSubscribe(Disposable d) {
-
-                    }
-
-                    @Override
-                    public void onNext(RequestBody body) {
-
-                    }
-
-                    @Override
-                    public void onError(Throwable e) {
-
-                    }
-
-                    @Override
-                    public void onComplete() {
-
-                    }
-                });
+//        RxClient.getCode()
+//                .subscribeOn(Schedulers.io())
+//                .observeOn(Schedulers.io())
+//                .subscribe(new Observer<RequestBody>() {
+//                    @Override
+//                    public void onSubscribe(Disposable d) {
+//
+//                    }
+//
+//                    @Override
+//                    public void onNext(RequestBody body) {
+//
+//                    }
+//
+//                    @Override
+//                    public void onError(Throwable e) {
+//
+//                    }
+//
+//                    @Override
+//                    public void onComplete() {
+//
+//                    }
+//                });
 
     }
 }
