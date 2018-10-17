@@ -7,7 +7,10 @@ import com.example.qqweq.mvpdemo.bean.FinishedDataBean;
 import java.util.List;
 
 import io.reactivex.Observable;
+import okhttp3.RequestBody;
+import retrofit2.http.Body;
 import retrofit2.http.GET;
+import retrofit2.http.POST;
 import retrofit2.http.Query;
 
 
@@ -19,5 +22,6 @@ public interface MyService {
 
     @GET("s/v1/task/testdone")
     Observable<List<FinishedDataBean>> getText(@Query("page") int page, @Query("size") int size, @Query("courseid") int courseid, @Query("type") int type, @Query("token") String token);
-
+    @POST("user/getMessageCode")
+    Observable<RequestBody> getCode(@Body RequestBody body);
 }

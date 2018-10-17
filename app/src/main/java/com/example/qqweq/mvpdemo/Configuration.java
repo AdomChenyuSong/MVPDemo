@@ -10,6 +10,8 @@ public class Configuration {
      * // 预上线:   http://apipred.reebo.cn:8088
      * //正式库地址: http://www.reebo.cn
      * //新测试环境 http://192.168.20.151
+     *
+     * http://www.nongke365.com:8081
      */
     public static final String BASE_URL = "http://www.reebo.cn/";
 }

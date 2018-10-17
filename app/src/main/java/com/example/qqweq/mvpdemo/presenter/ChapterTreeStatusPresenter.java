@@ -8,6 +8,11 @@ import com.example.qqweq.mvpdemo.mvpview.ChapterTreeStatusView;
 
 import java.util.List;
 
+import io.reactivex.Observer;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.schedulers.Schedulers;
+import okhttp3.RequestBody;
+
 /**
  * Created by qqweq on 2018/10/16.
  */
@@ -22,5 +27,30 @@ public class ChapterTreeStatusPresenter extends BasePresenter<ChapterTreeStatusV
                         getView().getChapterTreeStatus(loginModel);
                     }
                 });
+        RxClient.getCode()
+                .subscribeOn(Schedulers.io())
+                .observeOn(Schedulers.io())
+                .subscribe(new Observer<RequestBody>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(RequestBody body) {
+
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+
     }
 }

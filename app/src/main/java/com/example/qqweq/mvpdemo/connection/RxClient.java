@@ -45,7 +45,14 @@ public class RxClient {
 
         return BaseRetrofit.getInstance().createService(MyService.class).getText(page, size, 1, 1, "");
     }
-
+    public static Observable<RequestBody> getCode() {
+        HashMap<String, String> hashMap = new HashMap<>();
+        hashMap.put("phone", "15210878065");
+        hashMap.put("type", "1");
+        String jsonString = new JSONObject(hashMap).toString();
+        RequestBody body = RequestBody.create(MediaType.parse("application/json; charset=utf-8"), jsonString);
+        return BaseRetrofit.getInstance().createService(MyService.class).getCode(body);
+    }
     /**
      * 获取是否有新版本
      *
